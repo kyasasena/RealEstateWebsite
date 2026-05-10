@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 40" fill="none">
+  <!-- kw mark -->
+  <text x="0" y="30" font-family="Arial, sans-serif" font-size="32" font-weight="900" font-style="italic" fill="#CC0000" letter-spacing="-1">kw</text>
+  <!-- KELLER WILLIAMS. -->
+  <text x="50" y="19" font-family="Arial, sans-serif" font-size="8.5" font-weight="700" fill="#1a1a1a" letter-spacing="0.04em">KELLER WILLIAMS.</text>
+  <!-- BUCKHEAD -->
+  <text x="50" y="31" font-family="Arial, sans-serif" font-size="8.5" font-weight="700" fill="#1a1a1a" letter-spacing="0.12em">BUCKHEAD</text>
+</svg>
