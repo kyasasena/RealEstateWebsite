@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Resources | Kya Sasena, REALTOR® | Atlanta</title>
-  <meta name="description" content="Free real estate resources for Atlanta buyers and sellers — expert guides, market insights, and videos from Kya Sasena and Keller Williams." />
+  <meta name="description" content="Free real estate resources for Atlanta buyers and sellers: expert guides, market insights, and videos from Kya Sasena and Keller Williams." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -15,18 +15,60 @@
   <!-- NAV -->
   <nav class="nav" id="nav">
     <div class="nav-inner">
-      <img src="assets/kw-logo.svg" alt="Keller Williams Buckhead" class="nav-kw-logo" />
+      <a href="index.html"><img src="assets/kw-logo-buckhead.png" alt="Keller Williams Buckhead" class="nav-kw-logo" /></a>
       <div class="nav-logo-divider"></div>
       <a href="index.html" class="nav-logo">
         <span class="logo-name">Kya Sasena</span>
         <span class="logo-title">REALTOR®</span>
       </a>
       <ul class="nav-links">
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="buyers.html">For Buyers</a></li>
-        <li><a href="sellers.html">For Sellers</a></li>
-        <li><a href="resources.html" class="nav-active">Resources</a></li>
-        <li><a href="stats.html">Market Stats</a></li>
+        <li class="has-dropdown">
+          <a href="index.html">Home <span class="nav-arrow">&#9662;</span></a>
+          <div class="dropdown">
+            <a href="index.html#about">About Kya</a>
+            <a href="index.html#difference">Why Clients Choose Kya</a>
+            <a href="index.html#areas">Atlanta Metro Coverage</a>
+            <a href="index.html#newsletter">Leashes and Listings</a>
+            <a href="index.html#contact">Contact</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="buyers.html">For Buyers <span class="nav-arrow">&#9662;</span></a>
+          <div class="dropdown">
+            <a href="buyers.html#guide">Buyer's Guide</a>
+            <a href="buyers.html#specialties">Buyer Specialties</a>
+<a href="buyers.html#calculator">Mortgage Calculator</a>
+            <a href="buyers.html#contact">Get In Touch</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="sellers.html">For Sellers <span class="nav-arrow">&#9662;</span></a>
+          <div class="dropdown">
+            <a href="sellers.html#guide">Seller's Guide</a>
+            <a href="sellers.html#process">The Selling Process</a>
+            <a href="sellers.html#valuation">Home Valuation</a>
+            <a href="sellers.html#rent-or-buy">Rent or Buy Calculator</a>
+            <a href="sellers.html#contact">Get In Touch</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="resources.html" class="nav-active">Resources <span class="nav-arrow">&#9662;</span></a>
+          <div class="dropdown">
+            <a href="resources.html#videos">Expert Insights</a>
+            <a href="resources.html#guides">Guides from Kya</a>
+            <a href="resources.html#links">Helpful Links</a>
+            <a href="resources.html#newsletter">Leashes and Listings</a>
+            <a href="resources.html#contact">Ask Kya</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="stats.html">Market Stats <span class="nav-arrow">&#9662;</span></a>
+          <div class="dropdown">
+            <a href="stats.html#county-stats">Stats by County</a>
+            <a href="stats.html#overview">All Counties at a Glance</a>
+            <a href="stats.html#contact">Get In Touch</a>
+          </div>
+        </li>
         <li><a href="#contact" class="nav-cta">Work With Me</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -34,11 +76,28 @@
       </button>
     </div>
     <div class="nav-mobile" id="navMobile">
-      <a href="index.html#about">About</a>
+      <a href="index.html">Home</a>
+      <a href="index.html#about" class="nav-sub">About Kya</a>
+      <a href="index.html#difference" class="nav-sub">Why Clients Choose Kya</a>
+      <a href="index.html#areas" class="nav-sub">Atlanta Metro Coverage</a>
+      <a href="index.html#newsletter" class="nav-sub">Leashes and Listings</a>
       <a href="buyers.html">For Buyers</a>
+      <a href="buyers.html#guide" class="nav-sub">Buyer's Guide</a>
+      <a href="buyers.html#specialties" class="nav-sub">Buyer Specialties</a>
+      <a href="buyers.html#calculator" class="nav-sub">Mortgage Calculator</a>
       <a href="sellers.html">For Sellers</a>
+      <a href="sellers.html#guide" class="nav-sub">Seller's Guide</a>
+      <a href="sellers.html#process" class="nav-sub">The Selling Process</a>
+      <a href="sellers.html#valuation" class="nav-sub">Home Valuation</a>
+      <a href="sellers.html#rent-or-buy" class="nav-sub">Rent or Buy Calculator</a>
       <a href="resources.html">Resources</a>
+      <a href="resources.html#videos" class="nav-sub">Expert Insights</a>
+      <a href="resources.html#guides" class="nav-sub">Guides from Kya</a>
+      <a href="resources.html#links" class="nav-sub">Helpful Links</a>
+      <a href="resources.html#newsletter" class="nav-sub">Leashes and Listings</a>
       <a href="stats.html">Market Stats</a>
+      <a href="stats.html#county-stats" class="nav-sub">Stats by County</a>
+      <a href="stats.html#overview" class="nav-sub">All Counties at a Glance</a>
       <a href="#contact">Work With Me</a>
     </div>
   </nav>
@@ -49,7 +108,7 @@
     <div class="hero-content">
       <p class="hero-eyebrow">Guides &amp; Expert Insights · Atlanta, GA</p>
       <h1 class="hero-headline">Real Estate<br /><em>Resources</em></h1>
-      <p class="hero-sub">Everything you need to buy, sell, or stay informed — curated by Kya.</p>
+      <p class="hero-sub">Everything you need to buy, sell, or stay informed. Curated by Kya.</p>
     </div>
   </section>
 
@@ -74,7 +133,7 @@
         <p class="section-eyebrow">Take It From the Experts</p>
         <h2 class="section-title">Keller Williams Expert Insights</h2>
         <p style="max-width:640px;margin:0 auto 2.5rem;color:var(--gray-600);font-size:0.95rem;line-height:1.75;">
-          Educational videos from the Keller Williams real estate experts — covering everything from buying your first home to navigating a competitive market.
+          Educational videos from the Keller Williams real estate experts, covering everything from buying your first home to navigating a competitive market.
         </p>
       </div>
       <div class="video-grid">
@@ -134,7 +193,7 @@
         <div class="diff-card">
           <div class="diff-num">&#128214;</div>
           <h3>Home Buyer's Guide</h3>
-          <p>21 pages covering pre-approval, making offers, inspections, and closing — everything you need as a buyer.</p>
+          <p>21 pages covering pre-approval, making offers, inspections, and closing. Everything you need as a buyer.</p>
           <a href="assets/buyer-guide.pdf" target="_blank" class="btn btn-outline-light" style="margin-top:1rem;display:inline-block;">Download PDF</a>
         </div>
         <div class="diff-card">
@@ -152,7 +211,7 @@
         <div class="diff-card">
           <div class="diff-num">&#128203;</div>
           <h3>Free Home Valuation</h3>
-          <p>Curious what your home is worth? Get a data-backed Comparative Market Analysis — no obligation.</p>
+          <p>Curious what your home is worth? Get a data-backed Comparative Market Analysis, no obligation.</p>
           <a href="#contact" class="btn btn-outline-light" style="margin-top:1rem;display:inline-block;">Request Your CMA</a>
         </div>
       </div>
@@ -171,7 +230,7 @@
           <div class="rlc-icon">&#127968;</div>
           <div class="rlc-body">
             <h4>First-Time Buyer's Guide</h4>
-            <p>Keller Williams' step-by-step series for first-time homebuyers — where to start, what to expect.</p>
+            <p>Keller Williams' step-by-step series for first-time homebuyers, covering where to start and what to expect.</p>
             <span class="rlc-cta">Read the Guide &rarr;</span>
           </div>
         </a>
@@ -225,8 +284,8 @@
       <div class="nl-simple">
         <div class="nl-desc">
           <p class="section-eyebrow">Monthly Market Update</p>
-          <h2 class="section-title">The Bulldog Newsletter</h2>
-          <p>Real estate insights, Atlanta market data, and tips for dog-loving homeowners — straight from Kya's desk. Published monthly, it covers pricing trends, neighborhood updates, and practical advice whether you're buying, selling, or just staying informed.</p>
+          <h2 class="section-title">Leashes and Listings</h2>
+          <p>Leashes &amp; Listings is the newsletter where Atlanta real estate meets dog rescue. Every issue brings you local market updates, hand-picked listings, and a spotlight on a pup who's searching for their forever home, just like your buyers. Whether you're buying, selling, or just a dog person who likes to stay in the know, there's a spot for you in the pack.</p>
         </div>
         <div class="nl-signup">
           <p class="nl-signup-eyebrow">Never miss an issue</p>
@@ -250,7 +309,7 @@
           <div class="nl-issue-body">
             <p class="nl-issue-month">June 2025</p>
             <h4 class="nl-issue-title">Summer Market Heats Up</h4>
-            <p class="nl-issue-summary">Atlanta's summer inventory is tightening again — learn what that means for buyers trying to compete and sellers deciding whether now is the right moment to list. Plus: dog-friendly patios opening across Buckhead this season.</p>
+            <p class="nl-issue-summary">Atlanta's summer inventory is tightening again. Learn what that means for buyers trying to compete and sellers deciding whether now is the right moment to list. Plus: dog-friendly patios opening across Buckhead this season.</p>
             <span class="nl-issue-cta">Read Issue &rarr;</span>
           </div>
         </a>
@@ -262,20 +321,7 @@
           <div class="nl-issue-body">
             <p class="nl-issue-month">May 2025</p>
             <h4 class="nl-issue-title">Spring Buyers: What to Know Now</h4>
-            <p class="nl-issue-summary">Spring brought a surge of new listings across Fulton, Cobb, and Cherokee — but so did buyer demand. This issue breaks down the data by county and shares how Kya's clients are winning offers in a competitive spring market.</p>
-            <span class="nl-issue-cta">Read Issue &rarr;</span>
-          </div>
-        </a>
-
-        <a href="assets/newsletter-december.pdf" target="_blank" class="nl-issue-card">
-          <div class="nl-issue-cover nl-issue-cover-placeholder">
-            <span class="nl-placeholder-month">DEC</span>
-            <span class="nl-placeholder-year">2024</span>
-          </div>
-          <div class="nl-issue-body">
-            <p class="nl-issue-month">December 2024</p>
-            <h4 class="nl-issue-title">Year in Review: Atlanta Real Estate</h4>
-            <p class="nl-issue-summary">A look back at the Atlanta metro market in 2024 — what shifted, what held steady, and what it means heading into 2025. Includes a neighborhood-by-neighborhood price recap and Kya's outlook for the year ahead.</p>
+            <p class="nl-issue-summary">Spring brought a surge of new listings across Fulton, Cobb, and Cherokee, but so did buyer demand. This issue breaks down the data by county and shares how Kya's clients are winning offers in a competitive spring market.</p>
             <span class="nl-issue-cta">Read Issue &rarr;</span>
           </div>
         </a>
@@ -293,7 +339,7 @@
         <div class="contact-details">
           <div class="contact-item">
             <span class="contact-icon">&#128222;</span>
-            <div><strong>Phone</strong><a href="tel:+17247887788">(724) 788-7788</a></div>
+            <div><strong>Phone</strong><a href="tel:+14044587272">(404) 458-7272</a></div>
           </div>
           <div class="contact-item">
             <span class="contact-icon">&#9993;</span>

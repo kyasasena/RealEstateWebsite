@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:ishimine.kw.com)",
+      "Bash(Get-Content \"C:\\\\Users\\\\kyasa\\\\Documents\\\\kya-sasena-website\\\\RealEstateWebsite\\\\style.css\")",
+      "Bash(Measure-Object -Line)",
+      "PowerShell(Get-Content *)",
+      "PowerShell(git restore *)",
+      "PowerShell(Get-WmiObject *)",
+      "PowerShell(Get-Content \"C:\\\\Users\\\\kyasa\\\\Documents\\\\kya-sasena-website\\\\RealEstateWebsite\\\\style.css\" | Select-String \"section|SECTION\" | Select-Object -First 30 | ForEach-Object { $_.LineNumber.ToString\\(\\) + \": \" + $_.Line })",
+      "PowerShell(\\(Get-Content \"C:\\\\Users\\\\kyasa\\\\Documents\\\\kya-sasena-website\\\\RealEstateWebsite\\\\style.css\"\\).Count; Write-Host \"---\"; \\(Get-Content \"C:\\\\Users\\\\kyasa\\\\Documents\\\\kya-sasena-website\\\\RealEstateWebsite\\\\script.js\"\\).Count)",
+      "PowerShell(\\(Get-Content \"C:\\\\Users\\\\kyasa\\\\Documents\\\\kya-sasena-website\\\\RealEstateWebsite\\\\style.css\"\\) | Select-String \"spec-card|featured\" | ForEach-Object { $_.LineNumber.ToString\\(\\) + \": \" + $_.Line })",
+      "PowerShell(\\(Get-Content \"C:\\\\Users\\\\kyasa\\\\Documents\\\\kya-sasena-website\\\\RealEstateWebsite\\\\script.js\"\\) | Select-String \"RELOCATION|relocCity\" | ForEach-Object { $_.LineNumber.ToString\\(\\) + \": \" + $_.Line })",
+      "PowerShell(\\(Get-Content \"C:\\\\Users\\\\kyasa\\\\Documents\\\\kya-sasena-website\\\\RealEstateWebsite\\\\style.css\"\\) | Select-String \"RELOCATION|reloc-\" | Select-Object -First 3 | ForEach-Object { $_.LineNumber.ToString\\(\\) + \": \" + $_.Line })",
+      "PowerShell(\\(Get-Content \"C:\\\\Users\\\\kyasa\\\\Documents\\\\kya-sasena-website\\\\RealEstateWebsite\\\\style.css\"\\) | Select-String \"about-overlap|about-split\" | ForEach-Object { $_.LineNumber.ToString\\(\\) + \": \" + $_.Line })",
+      "PowerShell(\\(Get-Content \"C:\\\\Users\\\\kyasa\\\\Documents\\\\kya-sasena-website\\\\RealEstateWebsite\\\\index.html\"\\) | Select-String \"social\" | ForEach-Object { $_.LineNumber.ToString\\(\\) + \": \" + $_.Line })",
+      "PowerShell(Select-String *)",
+      "Bash(powershell -Command \"Select-String -Path '*.html' -Pattern '&mdash;|&#8212;|—' | Select-Object Filename, LineNumber, Line\")",
+      "PowerShell([System.IO.DriveInfo]::new\\('C'\\).AvailableFreeSpace / 1MB)",
+      "PowerShell(git *)",
+      "PowerShell(Get-Item *)"
+    ]
+  }
+}

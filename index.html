@@ -7,7 +7,7 @@
   <meta name="description" content="Kya Sasena, REALTOR® with Keller Williams Buckhead. Data-driven real estate in Buckhead, Vinings, Brookhaven, Sandy Springs & Dunwoody." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
@@ -16,18 +16,60 @@
   <!-- NAV -->
   <nav class="nav" id="nav">
     <div class="nav-inner">
-      <img src="assets/kw-logo.svg" alt="Keller Williams Buckhead" class="nav-kw-logo" />
+      <a href="index.html"><img src="assets/kw-logo-buckhead.png" alt="Keller Williams Buckhead" class="nav-kw-logo" /></a>
       <div class="nav-logo-divider"></div>
       <a href="index.html" class="nav-logo">
         <span class="logo-name">Kya Sasena</span>
         <span class="logo-title">REALTOR®</span>
       </a>
       <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="buyers.html">For Buyers</a></li>
-        <li><a href="sellers.html">For Sellers</a></li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="stats.html">Market Stats</a></li>
+        <li class="has-dropdown">
+          <a href="index.html" class="nav-active">Home <span class="nav-arrow">&#9662;</span></a>
+          <div class="dropdown">
+            <a href="#about">About Kya</a>
+            <a href="#difference">Why Clients Choose Kya</a>
+            <a href="#areas">Atlanta Metro Coverage</a>
+            <a href="#newsletter">Leashes and Listings</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="buyers.html">For Buyers <span class="nav-arrow">&#9662;</span></a>
+          <div class="dropdown">
+            <a href="buyers.html#guide">Buyer's Guide</a>
+            <a href="buyers.html#specialties">Buyer Specialties</a>
+            <a href="buyers.html#calculator">Mortgage Calculator</a>
+            <a href="buyers.html#contact">Get In Touch</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="sellers.html">For Sellers <span class="nav-arrow">&#9662;</span></a>
+          <div class="dropdown">
+            <a href="sellers.html#guide">Seller's Guide</a>
+            <a href="sellers.html#process">The Selling Process</a>
+            <a href="sellers.html#valuation">Home Valuation</a>
+            <a href="sellers.html#rent-or-buy">Rent or Buy Calculator</a>
+            <a href="sellers.html#contact">Get In Touch</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="resources.html">Resources <span class="nav-arrow">&#9662;</span></a>
+          <div class="dropdown">
+            <a href="resources.html#videos">Expert Insights</a>
+            <a href="resources.html#guides">Guides from Kya</a>
+            <a href="resources.html#links">Helpful Links</a>
+            <a href="resources.html#newsletter">Leashes and Listings</a>
+            <a href="resources.html#contact">Ask Kya</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="stats.html">Market Stats <span class="nav-arrow">&#9662;</span></a>
+          <div class="dropdown">
+            <a href="stats.html#county-stats">Stats by County</a>
+            <a href="stats.html#overview">All Counties at a Glance</a>
+            <a href="stats.html#contact">Get In Touch</a>
+          </div>
+        </li>
         <li><a href="#contact" class="nav-cta">Work With Me</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -35,11 +77,28 @@
       </button>
     </div>
     <div class="nav-mobile" id="navMobile">
-      <a href="#home">Home</a>
+      <a href="index.html">Home</a>
+      <a href="#about" class="nav-sub">About Kya</a>
+      <a href="#difference" class="nav-sub">Why Clients Choose Kya</a>
+      <a href="#areas" class="nav-sub">Atlanta Metro Coverage</a>
+      <a href="#newsletter" class="nav-sub">Leashes and Listings</a>
       <a href="buyers.html">For Buyers</a>
+      <a href="buyers.html#guide" class="nav-sub">Buyer's Guide</a>
+      <a href="buyers.html#specialties" class="nav-sub">Buyer Specialties</a>
+      <a href="buyers.html#calculator" class="nav-sub">Mortgage Calculator</a>
       <a href="sellers.html">For Sellers</a>
+      <a href="sellers.html#guide" class="nav-sub">Seller's Guide</a>
+      <a href="sellers.html#process" class="nav-sub">The Selling Process</a>
+      <a href="sellers.html#valuation" class="nav-sub">Home Valuation</a>
+      <a href="sellers.html#rent-or-buy" class="nav-sub">Rent or Buy Calculator</a>
       <a href="resources.html">Resources</a>
+      <a href="resources.html#videos" class="nav-sub">Expert Insights</a>
+      <a href="resources.html#guides" class="nav-sub">Guides from Kya</a>
+      <a href="resources.html#links" class="nav-sub">Helpful Links</a>
+      <a href="resources.html#newsletter" class="nav-sub">Leashes and Listings</a>
       <a href="stats.html">Market Stats</a>
+      <a href="stats.html#county-stats" class="nav-sub">Stats by County</a>
+      <a href="stats.html#overview" class="nav-sub">All Counties at a Glance</a>
       <a href="#contact">Work With Me</a>
     </div>
   </nav>
@@ -50,38 +109,36 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1 class="hero-headline">Atlanta Real Estate<br /><em>with Purpose &amp; Precision</em></h1>
-      <p class="hero-sub">Data-driven strategy. Personal approach. Results you can trust.</p>
+      <p class="hero-sub">Where Strategy meets heart.</p>
     </div>
   </section>
 
   <!-- ABOUT -->
   <section class="section about" id="about">
     <div class="container">
-      <div class="about-overlap">
-        <div class="about-overlap-photo">
+      <div class="about-split">
+        <div class="about-split-photo">
           <img src="assets/headshot-hires.png" alt="Kya Sasena, REALTOR®" />
         </div>
-        <div class="about-overlap-card">
+        <div class="about-split-body">
+          <p class="section-eyebrow">About Kya</p>
           <h2 class="section-title">Strategy Meets Heart</h2>
-          <p class="about-lead">I'm Kya Sasena, a REALTOR® with Keller Williams Realty Buckhead — and I bring a background that's anything but typical.</p>
+          <p class="about-lead">I'm Kya Sasena, a REALTOR® with Keller Williams Realty Buckhead. I bring a background that's anything but typical.</p>
           <p>Before real estate, I worked in data analytics and animal rescue. That combination shapes everything about how I operate: analytical, precise, patient, and genuinely invested in the people I serve.</p>
-          <p>My job is to translate complex market data into clear, confident decisions — so you always know where you stand and why.</p>
-          <div class="about-pillars">
-            <div class="pillar">
-              <div class="pillar-icon">&#9650;</div>
-              <h4>Data-Driven</h4>
-              <p>Every recommendation backed by real market intelligence.</p>
-            </div>
-            <div class="pillar">
-              <div class="pillar-icon">&#9670;</div>
-              <h4>Detail-Oriented</h4>
-              <p>Nothing slips — from contract terms to closing day.</p>
-            </div>
-            <div class="pillar">
-              <div class="pillar-icon">&#9733;</div>
-              <h4>Sharp Negotiator</h4>
-              <p>Fierce advocacy at every step of the deal.</p>
-            </div>
+          <p>My job is to translate complex market data into clear, confident decisions, so you always know where you stand and why.</p>
+          <div class="about-tags">
+            <span class="about-tag">&#9650;&nbsp; Data-Driven</span>
+            <span class="about-tag">&#9670;&nbsp; Detail-Oriented</span>
+            <span class="about-tag">&#9733;&nbsp; Sharp Negotiator</span>
+          </div>
+          <div class="about-ctas">
+            <a href="#contact" class="btn btn-gold">Work With Me</a>
+            <a href="#difference" class="btn btn-outline-dark">Why Clients Choose Kya</a>
+          </div>
+          <div class="social-links" style="margin-top:1.5rem">
+            <a href="#" class="social-btn" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="#" class="social-btn" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="#" class="social-btn" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
           </div>
         </div>
       </div>
@@ -99,17 +156,17 @@
         <div class="diff-card">
           <div class="diff-num">01</div>
           <h3>Market Intelligence</h3>
-          <p>Pricing trends, absorption rates, and neighborhood data — turned into your competitive edge.</p>
+          <p>Pricing trends, absorption rates, and neighborhood data, turned into your competitive edge.</p>
         </div>
         <div class="diff-card">
           <div class="diff-num">02</div>
           <h3>Strategy Built for You</h3>
-          <p>No cookie-cutter approach. Your goals, your timeline, your plan — from day one.</p>
+          <p>No cookie-cutter approach. Your goals, your timeline, your plan. From day one.</p>
         </div>
         <div class="diff-card">
           <div class="diff-num">03</div>
           <h3>Sharp Negotiation</h3>
-          <p>Whether buying or selling, I negotiate with precision and purpose — always in your corner.</p>
+          <p>Whether buying or selling, I negotiate with precision and purpose. Always in your corner.</p>
         </div>
         <div class="diff-card">
           <div class="diff-num">04</div>
@@ -184,8 +241,8 @@
       <div class="nl-simple">
         <div class="nl-desc">
           <p class="section-eyebrow">Monthly Market Update</p>
-          <h2 class="section-title">The Bulldog Newsletter</h2>
-          <p>Real estate insights, Atlanta market data, and tips for dog-loving homeowners — straight from Kya's desk. Published monthly, it covers pricing trends, neighborhood updates, and practical advice whether you're buying, selling, or just staying informed.</p>
+          <h2 class="section-title">Leashes and Listings</h2>
+          <p>Leashes &amp; Listings is the newsletter where Atlanta real estate meets dog rescue. Every issue brings you local market updates, hand-picked listings, and a spotlight on a pup who's searching for their forever home, just like your buyers. Whether you're buying, selling, or just a dog person who likes to stay in the know, there's a spot for you in the pack.</p>
         </div>
         <div class="nl-signup">
           <p class="nl-signup-eyebrow">Never miss an issue</p>
@@ -209,7 +266,7 @@
           <div class="nl-issue-body">
             <p class="nl-issue-month">June 2025</p>
             <h4 class="nl-issue-title">Summer Market Heats Up</h4>
-            <p class="nl-issue-summary">Atlanta's summer inventory is tightening again — learn what that means for buyers trying to compete and sellers deciding whether now is the right moment to list. Plus: dog-friendly patios opening across Buckhead this season.</p>
+            <p class="nl-issue-summary">Atlanta's summer inventory is tightening again. Learn what that means for buyers trying to compete and sellers deciding whether now is the right moment to list. Plus: dog-friendly patios opening across Buckhead this season.</p>
             <span class="nl-issue-cta">Read Issue &rarr;</span>
           </div>
         </a>
@@ -221,7 +278,7 @@
           <div class="nl-issue-body">
             <p class="nl-issue-month">May 2025</p>
             <h4 class="nl-issue-title">Spring Buyers: What to Know Now</h4>
-            <p class="nl-issue-summary">Spring brought a surge of new listings across Fulton, Cobb, and Cherokee — but so did buyer demand. This issue breaks down the data by county and shares how Kya's clients are winning offers in a competitive spring market.</p>
+            <p class="nl-issue-summary">Spring brought a surge of new listings across Fulton, Cobb, and Cherokee, but so did buyer demand. This issue breaks down the data by county and shares how Kya's clients are winning offers in a competitive spring market.</p>
             <span class="nl-issue-cta">Read Issue &rarr;</span>
           </div>
         </a>
@@ -234,7 +291,7 @@
           <div class="nl-issue-body">
             <p class="nl-issue-month">December 2024</p>
             <h4 class="nl-issue-title">Year in Review: Atlanta Real Estate</h4>
-            <p class="nl-issue-summary">A look back at the Atlanta metro market in 2024 — what shifted, what held steady, and what it means heading into 2025. Includes a neighborhood-by-neighborhood price recap and Kya's outlook for the year ahead.</p>
+            <p class="nl-issue-summary">A look back at the Atlanta metro market in 2024: what shifted, what held steady, and what it means heading into 2025. Includes a neighborhood-by-neighborhood price recap and Kya's outlook for the year ahead.</p>
             <span class="nl-issue-cta">Read Issue &rarr;</span>
           </div>
         </a>
@@ -248,7 +305,7 @@
       <div class="contact-info">
         <p class="section-eyebrow">Get In Touch</p>
         <h2 class="section-title">Let's Connect</h2>
-        <p>Ready to move, or just exploring? I'd love to talk. No pressure — just honest guidance.</p>
+        <p>Ready to move, or just exploring? I'd love to talk. No pressure, just honest guidance.</p>
         <div class="contact-details">
           <div class="contact-item">
             <span class="contact-icon">&#128222;</span>
@@ -271,11 +328,6 @@
               <span>Keller Williams Realty Buckhead<br />3650 Habersham Rd NW, Atlanta, GA 30305</span>
             </div>
           </div>
-        </div>
-        <div class="social-links">
-          <a href="#" class="social-btn" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-          <a href="#" class="social-btn" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-          <a href="#" class="social-btn" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
         </div>
       </div>
       <div class="contact-form-wrap">

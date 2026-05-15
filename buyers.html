@@ -7,7 +7,7 @@
   <meta name="description" content="Buying a home in Atlanta? Kya Sasena guides first-time buyers, luxury buyers, and relocation clients through the process with data-driven strategy." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -15,18 +15,60 @@
   <!-- NAV -->
   <nav class="nav" id="nav">
     <div class="nav-inner">
-      <img src="assets/kw-logo.svg" alt="Keller Williams Buckhead" class="nav-kw-logo" />
+      <a href="index.html"><img src="assets/kw-logo-buckhead.png" alt="Keller Williams Buckhead" class="nav-kw-logo" /></a>
       <div class="nav-logo-divider"></div>
       <a href="index.html" class="nav-logo">
         <span class="logo-name">Kya Sasena</span>
         <span class="logo-title">REALTOR®</span>
       </a>
       <ul class="nav-links">
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="buyers.html" class="nav-active">For Buyers</a></li>
-        <li><a href="sellers.html">For Sellers</a></li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="stats.html">Market Stats</a></li>
+        <li class="has-dropdown">
+          <a href="index.html">Home <span class="nav-arrow">&#9662;</span></a>
+          <div class="dropdown">
+            <a href="index.html#about">About Kya</a>
+            <a href="index.html#difference">Why Clients Choose Kya</a>
+            <a href="index.html#areas">Atlanta Metro Coverage</a>
+            <a href="index.html#newsletter">Leashes and Listings</a>
+            <a href="index.html#contact">Contact</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="buyers.html" class="nav-active">For Buyers <span class="nav-arrow">&#9662;</span></a>
+          <div class="dropdown">
+            <a href="buyers.html#guide">Buyer's Guide</a>
+            <a href="buyers.html#specialties">Buyer Specialties</a>
+<a href="buyers.html#calculator">Mortgage Calculator</a>
+            <a href="buyers.html#contact">Get In Touch</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="sellers.html">For Sellers <span class="nav-arrow">&#9662;</span></a>
+          <div class="dropdown">
+            <a href="sellers.html#guide">Seller's Guide</a>
+            <a href="sellers.html#process">The Selling Process</a>
+            <a href="sellers.html#valuation">Home Valuation</a>
+            <a href="sellers.html#rent-or-buy">Rent or Buy Calculator</a>
+            <a href="sellers.html#contact">Get In Touch</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="resources.html">Resources <span class="nav-arrow">&#9662;</span></a>
+          <div class="dropdown">
+            <a href="resources.html#videos">Expert Insights</a>
+            <a href="resources.html#guides">Guides from Kya</a>
+            <a href="resources.html#links">Helpful Links</a>
+            <a href="resources.html#newsletter">Leashes and Listings</a>
+            <a href="resources.html#contact">Ask Kya</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="stats.html">Market Stats <span class="nav-arrow">&#9662;</span></a>
+          <div class="dropdown">
+            <a href="stats.html#county-stats">Stats by County</a>
+            <a href="stats.html#overview">All Counties at a Glance</a>
+            <a href="stats.html#contact">Get In Touch</a>
+          </div>
+        </li>
         <li><a href="#contact" class="nav-cta">Work With Me</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -34,11 +76,28 @@
       </button>
     </div>
     <div class="nav-mobile" id="navMobile">
-      <a href="index.html#about">About</a>
+      <a href="index.html">Home</a>
+      <a href="index.html#about" class="nav-sub">About Kya</a>
+      <a href="index.html#difference" class="nav-sub">Why Clients Choose Kya</a>
+      <a href="index.html#areas" class="nav-sub">Atlanta Metro Coverage</a>
+      <a href="index.html#newsletter" class="nav-sub">Leashes and Listings</a>
       <a href="buyers.html">For Buyers</a>
+      <a href="buyers.html#guide" class="nav-sub">Buyer's Guide</a>
+      <a href="buyers.html#specialties" class="nav-sub">Buyer Specialties</a>
+      <a href="buyers.html#calculator" class="nav-sub">Mortgage Calculator</a>
       <a href="sellers.html">For Sellers</a>
+      <a href="sellers.html#guide" class="nav-sub">Seller's Guide</a>
+      <a href="sellers.html#process" class="nav-sub">The Selling Process</a>
+      <a href="sellers.html#valuation" class="nav-sub">Home Valuation</a>
+      <a href="sellers.html#rent-or-buy" class="nav-sub">Rent or Buy Calculator</a>
       <a href="resources.html">Resources</a>
+      <a href="resources.html#videos" class="nav-sub">Expert Insights</a>
+      <a href="resources.html#guides" class="nav-sub">Guides from Kya</a>
+      <a href="resources.html#links" class="nav-sub">Helpful Links</a>
+      <a href="resources.html#newsletter" class="nav-sub">Leashes and Listings</a>
       <a href="stats.html">Market Stats</a>
+      <a href="stats.html#county-stats" class="nav-sub">Stats by County</a>
+      <a href="stats.html#overview" class="nav-sub">All Counties at a Glance</a>
       <a href="#contact">Work With Me</a>
     </div>
   </nav>
@@ -49,7 +108,7 @@
     <div class="hero-content">
       <p class="hero-eyebrow">Buyer Representation · Atlanta, GA</p>
       <h1 class="hero-headline">Find Your Home<br /><em>with Confidence</em></h1>
-      <p class="hero-sub">From first showing to closing day — guided by data, driven by your goals.</p>
+      <p class="hero-sub">From first showing to closing day, guided by data and driven by your goals.</p>
     </div>
   </section>
 
@@ -62,13 +121,13 @@
       <div class="gf-body">
         <p class="section-eyebrow">Free Resource</p>
         <h2 class="section-title">The Complete Home Buyer's Guide</h2>
-        <p>Everything you need to buy with confidence in Atlanta — from getting pre-approved to closing day. Kya breaks down every step so you're never in the dark.</p>
+        <p>Everything you need to buy with confidence in Atlanta, from getting pre-approved to closing day. Kya breaks down every step so you're never in the dark.</p>
         <ul class="gf-list">
           <li>Understanding your buying power</li>
           <li>Building a smart home search strategy</li>
           <li>Making competitive offers in the Atlanta market</li>
           <li>Navigating inspections, due diligence &amp; contingencies</li>
-          <li>What to expect at closing — and beyond</li>
+          <li>What to expect at closing and beyond</li>
         </ul>
         <div class="gf-actions">
           <a href="assets/buyer-guide.pdf" target="_blank" class="btn btn-gold">Download Free Guide</a>
@@ -92,12 +151,12 @@
           <h3>First-Time Buyers</h3>
           <p>Step-by-step guidance so the process feels exciting, not overwhelming.</p>
         </a>
-        <a href="resources.html" class="spec-card featured">
+        <a href="resources.html" class="spec-card">
           <div class="spec-icon">&#10022;</div>
           <h3>Luxury Homes</h3>
-          <p>Buckhead estates, Vinings retreats — discretion and market expertise.</p>
+          <p>Buckhead estates, Vinings retreats. Discretion and market expertise.</p>
         </a>
-        <a href="resources.html" class="spec-card">
+        <a href="#contact" class="spec-card">
           <div class="spec-icon">&#128466;</div>
           <h3>Relocation Buyers</h3>
           <p>Moving to Atlanta? I help you navigate the market confidently from anywhere.</p>
@@ -111,83 +170,119 @@
     </div>
   </section>
 
-  <!-- BUYER PROCESS -->
-  <section class="section process-section" id="process">
+  <!-- MORTGAGE CALCULATOR -->
+  <section class="section mortgage-calc" id="calculator">
     <div class="container">
       <div class="section-header center">
-        <p class="section-eyebrow">How It Works</p>
-        <h2 class="section-title">The Buying Process</h2>
+        <p class="section-eyebrow">Planning Tools</p>
+        <h2 class="section-title">Mortgage Calculator</h2>
+        <p class="section-subtitle">Estimate your monthly payment. Adjust the inputs to match your situation.</p>
       </div>
-      <div class="timeline">
-        <div class="timeline-step">
-          <div class="tl-marker">
-            <div class="tl-circle">1</div>
-            <div class="tl-line"></div>
+      <div class="calc-grid">
+
+        <!-- Inputs -->
+        <div class="calc-inputs">
+
+          <div class="calc-field">
+            <div class="calc-field-header">
+              <label for="homePrice">Home Price</label>
+              <div class="calc-field-value"><span class="val-prefix">$</span><input type="number" id="homePrice" value="450000" min="50000" max="5000000" step="1000" /></div>
+            </div>
+            <input type="range" id="homePriceSlider" min="50000" max="2000000" step="5000" value="450000" class="calc-slider" aria-label="Home price" />
+            <div class="calc-slider-labels"><span>$50k</span><span>$2M</span></div>
           </div>
-          <div class="tl-body">
-            <h4>Discovery Consultation</h4>
-            <p>Goals, timeline, budget, must-haves. This conversation sets the foundation for everything.</p>
+
+          <div class="calc-field">
+            <div class="calc-field-header">
+              <label for="downPayment">Down Payment</label>
+              <div class="calc-field-value"><span class="val-prefix">$</span><input type="number" id="downPayment" value="90000" min="0" max="5000000" step="1000" /><span class="down-pct-label" id="downPctLabel">&nbsp;(20%)</span></div>
+            </div>
+            <input type="range" id="downPaymentSlider" min="0" max="50" step="0.5" value="20" class="calc-slider" aria-label="Down payment percent" />
+            <div class="calc-slider-labels"><span>0%</span><span>50%</span></div>
+          </div>
+
+          <div class="calc-field">
+            <div class="calc-field-header">
+              <label>Loan Term</label>
+            </div>
+            <div class="calc-toggle">
+              <button class="toggle-btn active" data-term="30">30 Years</button>
+              <button class="toggle-btn" data-term="20">20 Years</button>
+              <button class="toggle-btn" data-term="15">15 Years</button>
+            </div>
+          </div>
+
+          <div class="calc-field">
+            <div class="calc-field-header">
+              <label for="interestRate">Interest Rate</label>
+              <div class="calc-field-value"><input type="number" id="interestRate" value="6.75" min="1" max="15" step="0.05" /><span class="val-suffix">%</span></div>
+            </div>
+            <input type="range" id="interestRateSlider" min="1" max="15" step="0.05" value="6.75" class="calc-slider" aria-label="Interest rate" />
+            <div class="calc-slider-labels"><span>1%</span><span>15%</span></div>
+          </div>
+
+          <div class="calc-field-row">
+            <div class="calc-field half">
+              <div class="calc-field-header">
+                <label for="propTax">Property Tax /mo</label>
+                <div class="calc-field-value"><span class="val-prefix">$</span><input type="number" id="propTax" value="375" min="0" max="5000" step="25" /></div>
+              </div>
+            </div>
+            <div class="calc-field half">
+              <div class="calc-field-header">
+                <label for="homeInsurance">Home Insurance /mo</label>
+                <div class="calc-field-value"><span class="val-prefix">$</span><input type="number" id="homeInsurance" value="150" min="0" max="2000" step="10" /></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc-field">
+            <div class="calc-field-header">
+              <label for="hoaFees">HOA Fees /mo <span class="optional-tag">optional</span></label>
+              <div class="calc-field-value"><span class="val-prefix">$</span><input type="number" id="hoaFees" value="0" min="0" max="5000" step="25" /></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Results -->
+        <div class="calc-results">
+          <div class="calc-result-card">
+            <p class="result-label">Estimated Monthly Payment</p>
+            <div class="result-total" id="totalPayment">—</div>
+            <p class="result-loan-detail" id="loanSummary">—</p>
+
+            <div class="result-breakdown">
+              <div class="breakdown-row">
+                <span class="br-dot br-dot-pi"></span>
+                <span class="br-label">Principal &amp; Interest</span>
+                <div class="br-track"><div class="br-fill br-fill-pi" id="barPI"></div></div>
+                <span class="br-amount" id="amtPI">—</span>
+              </div>
+              <div class="breakdown-row">
+                <span class="br-dot br-dot-tax"></span>
+                <span class="br-label">Property Tax</span>
+                <div class="br-track"><div class="br-fill br-fill-tax" id="barTax"></div></div>
+                <span class="br-amount" id="amtTax">—</span>
+              </div>
+              <div class="breakdown-row">
+                <span class="br-dot br-dot-ins"></span>
+                <span class="br-label">Home Insurance</span>
+                <div class="br-track"><div class="br-fill br-fill-ins" id="barIns"></div></div>
+                <span class="br-amount" id="amtIns">—</span>
+              </div>
+              <div class="breakdown-row">
+                <span class="br-dot br-dot-hoa"></span>
+                <span class="br-label">HOA Fees</span>
+                <div class="br-track"><div class="br-fill br-fill-hoa" id="barHoa"></div></div>
+                <span class="br-amount" id="amtHoa">—</span>
+              </div>
+            </div>
+
+            <p class="calc-disclaimer">Estimates are for planning purposes only and do not constitute a loan commitment. Contact a licensed lender for an official quote.</p>
           </div>
         </div>
-        <div class="timeline-step">
-          <div class="tl-marker">
-            <div class="tl-circle">2</div>
-            <div class="tl-line"></div>
-          </div>
-          <div class="tl-body">
-            <h4>Lender Connection</h4>
-            <p>Pre-approval with a trusted local lender puts you in the strongest position to move fast.</p>
-          </div>
-        </div>
-        <div class="timeline-step">
-          <div class="tl-marker">
-            <div class="tl-circle">3</div>
-            <div class="tl-line"></div>
-          </div>
-          <div class="tl-body">
-            <h4>Personalized Search</h4>
-            <p>Custom strategy beyond MLS alerts — proactive outreach and off-market awareness.</p>
-          </div>
-        </div>
-        <div class="timeline-step">
-          <div class="tl-marker">
-            <div class="tl-circle">4</div>
-            <div class="tl-line"></div>
-          </div>
-          <div class="tl-body">
-            <h4>Tours &amp; Analysis</h4>
-            <p>I walk you through the data behind each property so you compare with confidence.</p>
-          </div>
-        </div>
-        <div class="timeline-step">
-          <div class="tl-marker">
-            <div class="tl-circle">5</div>
-            <div class="tl-line"></div>
-          </div>
-          <div class="tl-body">
-            <h4>Offer &amp; Negotiation</h4>
-            <p>Compelling, competitive offer crafted and negotiated to protect your investment.</p>
-          </div>
-        </div>
-        <div class="timeline-step">
-          <div class="tl-marker">
-            <div class="tl-circle">6</div>
-            <div class="tl-line"></div>
-          </div>
-          <div class="tl-body">
-            <h4>Due Diligence</h4>
-            <p>Inspections, contingencies, and repairs — guided and negotiated on your behalf.</p>
-          </div>
-        </div>
-        <div class="timeline-step tl-last">
-          <div class="tl-marker">
-            <div class="tl-circle tl-circle-final">7</div>
-          </div>
-          <div class="tl-body">
-            <h4>Closing &amp; Beyond</h4>
-            <p>Smooth close and ongoing support — vendor referrals, local resources, and more.</p>
-          </div>
-        </div>
+
       </div>
     </div>
   </section>
@@ -198,11 +293,11 @@
       <div class="contact-info">
         <p class="section-eyebrow">Ready to Start?</p>
         <h2 class="section-title">Let's Find Your Home</h2>
-        <p>Whether you're actively searching or just starting to think about buying, I'd love to connect. No pressure — just honest, expert guidance.</p>
+        <p>Whether you're actively searching or just starting to think about buying, I'd love to connect. No pressure, just honest expert guidance.</p>
         <div class="contact-details">
           <div class="contact-item">
             <span class="contact-icon">&#128222;</span>
-            <div><strong>Phone</strong><a href="tel:+17247887788">(724) 788-7788</a></div>
+            <div><strong>Phone</strong><a href="tel:+14044587272">(404) 458-7272</a></div>
           </div>
           <div class="contact-item">
             <span class="contact-icon">&#9993;</span>

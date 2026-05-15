@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Market Stats | Kya Sasena, REALTOR® | Atlanta</title>
-  <meta name="description" content="Atlanta metro real estate market statistics — median prices, days on market, inventory levels, and county-by-county breakdowns for buyers and sellers." />
+  <meta name="description" content="Atlanta metro real estate market statistics: median prices, days on market, inventory levels, and county-by-county breakdowns for buyers and sellers." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -15,18 +15,60 @@
   <!-- NAV -->
   <nav class="nav" id="nav">
     <div class="nav-inner">
-      <img src="assets/kw-logo.svg" alt="Keller Williams Buckhead" class="nav-kw-logo" />
+      <a href="index.html"><img src="assets/kw-logo-buckhead.png" alt="Keller Williams Buckhead" class="nav-kw-logo" /></a>
       <div class="nav-logo-divider"></div>
       <a href="index.html" class="nav-logo">
         <span class="logo-name">Kya Sasena</span>
         <span class="logo-title">REALTOR®</span>
       </a>
       <ul class="nav-links">
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="buyers.html">For Buyers</a></li>
-        <li><a href="sellers.html">For Sellers</a></li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="stats.html" class="nav-active">Market Stats</a></li>
+        <li class="has-dropdown">
+          <a href="index.html">Home <span class="nav-arrow">&#9662;</span></a>
+          <div class="dropdown">
+            <a href="index.html#about">About Kya</a>
+            <a href="index.html#difference">Why Clients Choose Kya</a>
+            <a href="index.html#areas">Atlanta Metro Coverage</a>
+            <a href="index.html#newsletter">Leashes and Listings</a>
+            <a href="index.html#contact">Contact</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="buyers.html">For Buyers <span class="nav-arrow">&#9662;</span></a>
+          <div class="dropdown">
+            <a href="buyers.html#guide">Buyer's Guide</a>
+            <a href="buyers.html#specialties">Buyer Specialties</a>
+<a href="buyers.html#calculator">Mortgage Calculator</a>
+            <a href="buyers.html#contact">Get In Touch</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="sellers.html">For Sellers <span class="nav-arrow">&#9662;</span></a>
+          <div class="dropdown">
+            <a href="sellers.html#guide">Seller's Guide</a>
+            <a href="sellers.html#process">The Selling Process</a>
+            <a href="sellers.html#valuation">Home Valuation</a>
+            <a href="sellers.html#rent-or-buy">Rent or Buy Calculator</a>
+            <a href="sellers.html#contact">Get In Touch</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="resources.html">Resources <span class="nav-arrow">&#9662;</span></a>
+          <div class="dropdown">
+            <a href="resources.html#videos">Expert Insights</a>
+            <a href="resources.html#guides">Guides from Kya</a>
+            <a href="resources.html#links">Helpful Links</a>
+            <a href="resources.html#newsletter">Leashes and Listings</a>
+            <a href="resources.html#contact">Ask Kya</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="stats.html" class="nav-active">Market Stats <span class="nav-arrow">&#9662;</span></a>
+          <div class="dropdown">
+            <a href="stats.html#county-stats">Stats by County</a>
+            <a href="stats.html#overview">All Counties at a Glance</a>
+            <a href="stats.html#contact">Get In Touch</a>
+          </div>
+        </li>
         <li><a href="#contact" class="nav-cta">Work With Me</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -34,11 +76,28 @@
       </button>
     </div>
     <div class="nav-mobile" id="navMobile">
-      <a href="index.html#about">About</a>
+      <a href="index.html">Home</a>
+      <a href="index.html#about" class="nav-sub">About Kya</a>
+      <a href="index.html#difference" class="nav-sub">Why Clients Choose Kya</a>
+      <a href="index.html#areas" class="nav-sub">Atlanta Metro Coverage</a>
+      <a href="index.html#newsletter" class="nav-sub">Leashes and Listings</a>
       <a href="buyers.html">For Buyers</a>
+      <a href="buyers.html#guide" class="nav-sub">Buyer's Guide</a>
+      <a href="buyers.html#specialties" class="nav-sub">Buyer Specialties</a>
+      <a href="buyers.html#calculator" class="nav-sub">Mortgage Calculator</a>
       <a href="sellers.html">For Sellers</a>
+      <a href="sellers.html#guide" class="nav-sub">Seller's Guide</a>
+      <a href="sellers.html#process" class="nav-sub">The Selling Process</a>
+      <a href="sellers.html#valuation" class="nav-sub">Home Valuation</a>
+      <a href="sellers.html#rent-or-buy" class="nav-sub">Rent or Buy Calculator</a>
       <a href="resources.html">Resources</a>
+      <a href="resources.html#videos" class="nav-sub">Expert Insights</a>
+      <a href="resources.html#guides" class="nav-sub">Guides from Kya</a>
+      <a href="resources.html#links" class="nav-sub">Helpful Links</a>
+      <a href="resources.html#newsletter" class="nav-sub">Leashes and Listings</a>
       <a href="stats.html">Market Stats</a>
+      <a href="stats.html#county-stats" class="nav-sub">Stats by County</a>
+      <a href="stats.html#overview" class="nav-sub">All Counties at a Glance</a>
       <a href="#contact">Work With Me</a>
     </div>
   </nav>
@@ -87,7 +146,7 @@
       <div class="section-header center">
         <p class="section-eyebrow">County Breakdown</p>
         <h2 class="section-title">Market Stats by County</h2>
-        <p style="max-width:560px;margin:0 auto 2rem;color:var(--gray-600);font-size:0.95rem;line-height:1.7;">Select a county below to view its live market statistics — active listings, pending sales, median price, and more.</p>
+        <p style="max-width:560px;margin:0 auto 2rem;color:var(--gray-600);font-size:0.95rem;line-height:1.7;">Select a county below to view its live market statistics: active listings, pending sales, median price, and more.</p>
       </div>
 
       <!-- County Tab Buttons -->
@@ -147,7 +206,7 @@
         <a href="https://therealestatestats.com/georgia/#fulton" target="_blank" rel="noopener" class="diff-card diff-card-link">
           <div class="diff-num">★</div>
           <h3>Fulton County</h3>
-          <p>Primary market — Buckhead, Midtown, Vinings. View active listings, price trends & inventory.</p>
+          <p>Primary market, Buckhead, Midtown, Vinings. View active listings, price trends & inventory.</p>
         </a>
         <a href="https://therealestatestats.com/georgia/#cobb" target="_blank" rel="noopener" class="diff-card diff-card-link">
           <div class="diff-num">02</div>
@@ -194,7 +253,7 @@
       <div class="val-text">
         <p class="section-eyebrow light">Let's Talk Numbers</p>
         <h2>What Does This Mean for You?</h2>
-        <p>Market data tells a story — Kya translates it into a strategy that works for your specific situation, neighborhood, and timeline.</p>
+        <p>Market data tells a story. Kya translates it into a strategy that works for your specific situation, neighborhood, and timeline.</p>
         <a href="#contact" class="btn btn-gold">Schedule a Consultation</a>
       </div>
       <div class="val-visual">
@@ -218,11 +277,11 @@
       <div class="contact-info">
         <p class="section-eyebrow">Get In Touch</p>
         <h2 class="section-title">Let's Connect</h2>
-        <p>Have questions about what the data means for your situation? I'm happy to walk you through it — no obligation.</p>
+        <p>Have questions about what the data means for your situation? I'm happy to walk you through it, no obligation.</p>
         <div class="contact-details">
           <div class="contact-item">
             <span class="contact-icon">&#128222;</span>
-            <div><strong>Phone</strong><a href="tel:+17247887788">(724) 788-7788</a></div>
+            <div><strong>Phone</strong><a href="tel:+14044587272">(404) 458-7272</a></div>
           </div>
           <div class="contact-item">
             <span class="contact-icon">&#9993;</span>

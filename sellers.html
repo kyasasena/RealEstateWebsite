@@ -7,7 +7,7 @@
   <meta name="description" content="Selling your Atlanta home? Kya Sasena delivers data-driven pricing, professional marketing, and expert negotiation to get you top dollar." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -15,18 +15,60 @@
   <!-- NAV -->
   <nav class="nav" id="nav">
     <div class="nav-inner">
-      <img src="assets/kw-logo.svg" alt="Keller Williams Buckhead" class="nav-kw-logo" />
+      <a href="index.html"><img src="assets/kw-logo-buckhead.png" alt="Keller Williams Buckhead" class="nav-kw-logo" /></a>
       <div class="nav-logo-divider"></div>
       <a href="index.html" class="nav-logo">
         <span class="logo-name">Kya Sasena</span>
         <span class="logo-title">REALTOR®</span>
       </a>
       <ul class="nav-links">
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="buyers.html">For Buyers</a></li>
-        <li><a href="sellers.html" class="nav-active">For Sellers</a></li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="stats.html">Market Stats</a></li>
+        <li class="has-dropdown">
+          <a href="index.html">Home <span class="nav-arrow">&#9662;</span></a>
+          <div class="dropdown">
+            <a href="index.html#about">About Kya</a>
+            <a href="index.html#difference">Why Clients Choose Kya</a>
+            <a href="index.html#areas">Atlanta Metro Coverage</a>
+            <a href="index.html#newsletter">Leashes and Listings</a>
+            <a href="index.html#contact">Contact</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="buyers.html">For Buyers <span class="nav-arrow">&#9662;</span></a>
+          <div class="dropdown">
+            <a href="buyers.html#guide">Buyer's Guide</a>
+            <a href="buyers.html#specialties">Buyer Specialties</a>
+<a href="buyers.html#calculator">Mortgage Calculator</a>
+            <a href="buyers.html#contact">Get In Touch</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="sellers.html" class="nav-active">For Sellers <span class="nav-arrow">&#9662;</span></a>
+          <div class="dropdown">
+            <a href="sellers.html#guide">Seller's Guide</a>
+            <a href="sellers.html#process">The Selling Process</a>
+            <a href="sellers.html#valuation">Home Valuation</a>
+            <a href="sellers.html#rent-or-buy">Rent or Buy Calculator</a>
+            <a href="sellers.html#contact">Get In Touch</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="resources.html">Resources <span class="nav-arrow">&#9662;</span></a>
+          <div class="dropdown">
+            <a href="resources.html#videos">Expert Insights</a>
+            <a href="resources.html#guides">Guides from Kya</a>
+            <a href="resources.html#links">Helpful Links</a>
+            <a href="resources.html#newsletter">Leashes and Listings</a>
+            <a href="resources.html#contact">Ask Kya</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="stats.html">Market Stats <span class="nav-arrow">&#9662;</span></a>
+          <div class="dropdown">
+            <a href="stats.html#county-stats">Stats by County</a>
+            <a href="stats.html#overview">All Counties at a Glance</a>
+            <a href="stats.html#contact">Get In Touch</a>
+          </div>
+        </li>
         <li><a href="#contact" class="nav-cta">Work With Me</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -34,11 +76,28 @@
       </button>
     </div>
     <div class="nav-mobile" id="navMobile">
-      <a href="index.html#about">About</a>
+      <a href="index.html">Home</a>
+      <a href="index.html#about" class="nav-sub">About Kya</a>
+      <a href="index.html#difference" class="nav-sub">Why Clients Choose Kya</a>
+      <a href="index.html#areas" class="nav-sub">Atlanta Metro Coverage</a>
+      <a href="index.html#newsletter" class="nav-sub">Leashes and Listings</a>
       <a href="buyers.html">For Buyers</a>
+      <a href="buyers.html#guide" class="nav-sub">Buyer's Guide</a>
+      <a href="buyers.html#specialties" class="nav-sub">Buyer Specialties</a>
+      <a href="buyers.html#calculator" class="nav-sub">Mortgage Calculator</a>
       <a href="sellers.html">For Sellers</a>
+      <a href="sellers.html#guide" class="nav-sub">Seller's Guide</a>
+      <a href="sellers.html#process" class="nav-sub">The Selling Process</a>
+      <a href="sellers.html#valuation" class="nav-sub">Home Valuation</a>
+      <a href="sellers.html#rent-or-buy" class="nav-sub">Rent or Buy Calculator</a>
       <a href="resources.html">Resources</a>
+      <a href="resources.html#videos" class="nav-sub">Expert Insights</a>
+      <a href="resources.html#guides" class="nav-sub">Guides from Kya</a>
+      <a href="resources.html#links" class="nav-sub">Helpful Links</a>
+      <a href="resources.html#newsletter" class="nav-sub">Leashes and Listings</a>
       <a href="stats.html">Market Stats</a>
+      <a href="stats.html#county-stats" class="nav-sub">Stats by County</a>
+      <a href="stats.html#overview" class="nav-sub">All Counties at a Glance</a>
       <a href="#contact">Work With Me</a>
     </div>
   </nav>
@@ -49,7 +108,7 @@
     <div class="hero-content">
       <p class="hero-eyebrow">Seller Representation · Atlanta, GA</p>
       <h1 class="hero-headline">Sell Smarter.<br /><em>Get More.</em></h1>
-      <p class="hero-sub">Strategic pricing, professional marketing, and expert negotiation — designed to maximize your return.</p>
+      <p class="hero-sub">Strategic pricing, professional marketing, and expert negotiation designed to maximize your return.</p>
     </div>
   </section>
 
@@ -59,7 +118,7 @@
       <div class="gf-body">
         <p class="section-eyebrow">Free Resource</p>
         <h2 class="section-title">The Complete Home Seller's Guide</h2>
-        <p>Get your home sold for top dollar on your timeline. Kya's seller guide walks you through pricing strategy, staging, marketing, and negotiations — everything you need to sell with confidence.</p>
+        <p>Get your home sold for top dollar on your timeline. Kya's seller guide walks you through pricing strategy, staging, marketing, and negotiations. Everything you need to sell with confidence.</p>
         <ul class="gf-list">
           <li>Pricing your home strategically with real data</li>
           <li>Staging &amp; preparation tips that move the needle</li>
@@ -95,7 +154,7 @@
         <div class="diff-card">
           <div class="diff-num">02</div>
           <h3>Preparation &amp; Staging</h3>
-          <p>I walk you through what repairs or updates move the needle — and connect you with trusted vendors to get it done.</p>
+          <p>I walk you through what repairs or updates move the needle and connect you with trusted vendors to get it done.</p>
         </div>
         <div class="diff-card">
           <div class="diff-num">03</div>
@@ -105,32 +164,239 @@
         <div class="diff-card">
           <div class="diff-num">04</div>
           <h3>Offer Review &amp; Close</h3>
-          <p>I walk you through every offer — price, terms, contingencies — negotiate assertively, and manage the contract to a smooth close.</p>
+          <p>I walk you through every offer: price, terms, and contingencies, then negotiate assertively and manage the contract to a smooth close.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- HOME VALUATION -->
-  <section class="section valuation-cta" id="valuation">
-    <div class="container valuation-inner">
-      <div class="val-text">
-        <p class="section-eyebrow light">Free — No Obligation</p>
-        <h2>What Is Your Home Worth?</h2>
-        <p>Get a personalized, data-backed market analysis of your home's current value. No pressure, no obligation — just clarity on where you stand.</p>
-        <a href="#contact" class="btn btn-gold">Request Your Free CMA</a>
+  <!-- WHAT'S MY HOME WORTH -->
+  <section class="section whw-section" id="valuation">
+    <div class="container">
+      <div class="section-header center">
+        <p class="section-eyebrow" style="color:var(--champagne)">Free · No Obligation</p>
+        <h2 class="section-title" style="color:var(--white)">What's My Home Worth?</h2>
+        <p class="section-subtitle" style="color:rgba(255,255,255,0.6);margin:0 auto;">A personalized market analysis from Kya, built on real comparables, not an algorithm.</p>
       </div>
-      <div class="val-visual">
-        <div class="val-card">
-          <div class="val-card-icon">&#128200;</div>
-          <h4>Your Complimentary Market Analysis Includes</h4>
-          <ul>
-            <li>Current market conditions</li>
-            <li>Comparable recent sales</li>
-            <li>Pricing strategy recommendation</li>
-            <li>Neighborhood trend insights</li>
-          </ul>
+      <div class="whw-grid">
+        <div class="whw-trust">
+          <div class="whw-trust-item">
+            <span class="whw-check">&#10003;</span>
+            <div><strong>Complimentary</strong><p>No cost or commitment required.</p></div>
+          </div>
+          <div class="whw-trust-item">
+            <span class="whw-check">&#10003;</span>
+            <div><strong>Data-Backed</strong><p>Built on real recent sales in your neighborhood.</p></div>
+          </div>
+          <div class="whw-trust-item">
+            <span class="whw-check">&#10003;</span>
+            <div><strong>Personalized</strong><p>A real analysis by Kya, not an automated estimate.</p></div>
+          </div>
+          <div class="whw-trust-item">
+            <span class="whw-check">&#10003;</span>
+            <div><strong>Fast Turnaround</strong><p>Typically delivered within 24 hours.</p></div>
+          </div>
+          <div class="whw-cma-card">
+            <div class="val-card-icon">&#128200;</div>
+            <h4>Your CMA Includes</h4>
+            <ul>
+              <li>Current market conditions</li>
+              <li>Comparable recent sales</li>
+              <li>Pricing strategy recommendation</li>
+              <li>Neighborhood trend insights</li>
+            </ul>
+          </div>
         </div>
+        <div class="whw-form-wrap">
+          <form class="whw-form" id="whwForm">
+            <h3>Tell Me About Your Home</h3>
+            <div class="form-group">
+              <label for="whwAddress">Property Address</label>
+              <input type="text" id="whwAddress" name="address" placeholder="123 Peachtree St NE, Atlanta, GA" required />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="whwBeds">Bedrooms</label>
+                <select id="whwBeds" name="bedrooms">
+                  <option value="">Select</option>
+                  <option>1</option><option>2</option><option>3</option>
+                  <option>4</option><option>5</option><option>6+</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="whwBaths">Bathrooms</label>
+                <select id="whwBaths" name="bathrooms">
+                  <option value="">Select</option>
+                  <option>1</option><option>1.5</option><option>2</option>
+                  <option>2.5</option><option>3</option><option>3.5</option><option>4+</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="whwSqft">Square Footage</label>
+                <select id="whwSqft" name="sqft">
+                  <option value="">Select</option>
+                  <option>Under 1,000</option><option>1,000–1,500</option>
+                  <option>1,500–2,000</option><option>2,000–2,500</option>
+                  <option>2,500–3,500</option><option>3,500–5,000</option><option>5,000+</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="whwYear">Year Built</label>
+                <input type="number" id="whwYear" name="yearBuilt" placeholder="e.g. 2005" min="1900" max="2025" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="whwEmail">Your Email</label>
+              <input type="email" id="whwEmail" name="email" placeholder="jane@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="whwPhone">Phone (Optional)</label>
+              <input type="tel" id="whwPhone" name="phone" placeholder="(404) 555-0000" />
+            </div>
+            <button type="submit" class="btn btn-gold full-width">Get My Home Value</button>
+            <p class="form-note whw-note">Your information is kept private. No spam, ever.</p>
+          </form>
+          <div class="whw-success" id="whwSuccess">
+            <div class="whw-success-icon">&#10003;</div>
+            <h3>Request Received!</h3>
+            <p>Kya will prepare your personalized Comparative Market Analysis and be in touch within 24 hours.</p>
+            <a href="#contact" class="btn btn-gold" style="margin-top:1.5rem">Send a Message</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RENT OR BUY CALCULATOR -->
+  <section class="section rob-section" id="rent-or-buy">
+    <div class="container">
+      <div class="section-header center">
+        <p class="section-eyebrow">Planning Tools</p>
+        <h2 class="section-title">Should You Rent or Buy?</h2>
+        <p class="section-subtitle">Compare the true long-term cost of renting vs. buying, factoring in equity, appreciation, and rising rents.</p>
+      </div>
+      <div class="calc-grid">
+
+        <div class="calc-inputs">
+
+          <div class="calc-field-row">
+            <div class="calc-field half">
+              <div class="calc-field-header">
+                <label for="robRent">Monthly Rent</label>
+                <div class="calc-field-value"><span class="val-prefix">$</span><input type="number" id="robRent" value="2200" min="500" max="20000" step="50" /></div>
+              </div>
+            </div>
+            <div class="calc-field half">
+              <div class="calc-field-header">
+                <label for="robPrice">Home Purchase Price</label>
+                <div class="calc-field-value"><span class="val-prefix">$</span><input type="number" id="robPrice" value="450000" min="50000" max="5000000" step="5000" /></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc-field">
+            <div class="calc-field-header">
+              <label for="robDown">Down Payment</label>
+              <div class="calc-field-value"><input type="number" id="robDown" value="20" min="0" max="100" step="0.5" /><span class="val-suffix">%</span><span class="down-pct-label" id="robDownAmt">&nbsp;($90,000)</span></div>
+            </div>
+            <input type="range" id="robDownSlider" min="0" max="50" step="0.5" value="20" class="calc-slider" />
+            <div class="calc-slider-labels"><span>0%</span><span>50%</span></div>
+          </div>
+
+          <div class="calc-field">
+            <div class="calc-field-header">
+              <label for="robRate">Interest Rate</label>
+              <div class="calc-field-value"><input type="number" id="robRate" value="6.75" min="1" max="15" step="0.05" /><span class="val-suffix">%</span></div>
+            </div>
+            <input type="range" id="robRateSlider" min="1" max="15" step="0.05" value="6.75" class="calc-slider" />
+            <div class="calc-slider-labels"><span>1%</span><span>15%</span></div>
+          </div>
+
+          <div class="calc-field-row">
+            <div class="calc-field half">
+              <div class="calc-field-header">
+                <label for="robAppreciation">Home Appreciation /yr</label>
+                <div class="calc-field-value"><input type="number" id="robAppreciation" value="3.5" min="0" max="10" step="0.5" /><span class="val-suffix">%</span></div>
+              </div>
+            </div>
+            <div class="calc-field half">
+              <div class="calc-field-header">
+                <label for="robRentIncrease">Rent Increase /yr</label>
+                <div class="calc-field-value"><input type="number" id="robRentIncrease" value="3" min="0" max="10" step="0.5" /><span class="val-suffix">%</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc-field-row">
+            <div class="calc-field half">
+              <div class="calc-field-header">
+                <label for="robTax">Property Tax /mo</label>
+                <div class="calc-field-value"><span class="val-prefix">$</span><input type="number" id="robTax" value="375" min="0" max="5000" step="25" /></div>
+              </div>
+            </div>
+            <div class="calc-field half">
+              <div class="calc-field-header">
+                <label for="robIns">Home Insurance /mo</label>
+                <div class="calc-field-value"><span class="val-prefix">$</span><input type="number" id="robIns" value="150" min="0" max="2000" step="10" /></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc-field">
+            <div class="calc-field-header"><label>Compare Over</label></div>
+            <div class="calc-toggle" id="robHorizonToggle">
+              <button class="toggle-btn" data-years="5">5 Yrs</button>
+              <button class="toggle-btn active" data-years="10">10 Yrs</button>
+              <button class="toggle-btn" data-years="20">20 Yrs</button>
+              <button class="toggle-btn" data-years="30">30 Yrs</button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="calc-results">
+          <div class="calc-result-card">
+            <p class="result-label">Verdict</p>
+            <div class="rob-verdict" id="robVerdict">—</div>
+            <p class="result-loan-detail" id="robVerdictDetail">—</p>
+
+            <div class="rob-monthly">
+              <div class="rob-monthly-row">
+                <span class="rob-monthly-label">Monthly Cost to Own</span>
+                <span class="rob-monthly-amount" id="robMonthlyOwn">—</span>
+              </div>
+              <div class="rob-monthly-row">
+                <span class="rob-monthly-label">Monthly Rent (today)</span>
+                <span class="rob-monthly-amount" id="robMonthlyRent">—</span>
+              </div>
+            </div>
+
+            <div class="rob-breakdown">
+              <div class="rob-stat">
+                <span class="rob-stat-label">Total Rent Paid</span>
+                <span class="rob-stat-value" id="robTotalRent">—</span>
+              </div>
+              <div class="rob-stat">
+                <span class="rob-stat-label">Net Cost to Own</span>
+                <span class="rob-stat-value" id="robNetOwn">—</span>
+                <span class="rob-stat-note">after equity &amp; appreciation</span>
+              </div>
+              <div class="rob-stat">
+                <span class="rob-stat-label">Est. Home Equity</span>
+                <span class="rob-stat-value rob-equity" id="robEquity">—</span>
+              </div>
+              <div class="rob-stat">
+                <span class="rob-stat-label">Break-Even Point</span>
+                <span class="rob-stat-value" id="robBreakEven">—</span>
+              </div>
+            </div>
+
+            <p class="calc-disclaimer">Assumes 30-yr fixed mortgage and 1% annual maintenance cost. For planning purposes only.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -145,7 +411,7 @@
         <div class="contact-details">
           <div class="contact-item">
             <span class="contact-icon">&#128222;</span>
-            <div><strong>Phone</strong><a href="tel:+17247887788">(724) 788-7788</a></div>
+            <div><strong>Phone</strong><a href="tel:+14044587272">(404) 458-7272</a></div>
           </div>
           <div class="contact-item">
             <span class="contact-icon">&#9993;</span>
