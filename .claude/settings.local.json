@@ -18,7 +18,8 @@
       "Bash(powershell -Command \"Select-String -Path '*.html' -Pattern '&mdash;|&#8212;|—' | Select-Object Filename, LineNumber, Line\")",
       "PowerShell([System.IO.DriveInfo]::new\\('C'\\).AvailableFreeSpace / 1MB)",
       "PowerShell(git *)",
-      "PowerShell(Get-Item *)"
+      "PowerShell(Get-Item *)",
+      "WebFetch(domain:commons.wikimedia.org)"
     ]
   }
 }

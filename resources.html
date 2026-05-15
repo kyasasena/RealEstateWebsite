@@ -7,7 +7,7 @@
   <meta name="description" content="Free real estate resources for Atlanta buyers and sellers: expert guides, market insights, and videos from Kya Sasena and Keller Williams." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -45,7 +45,6 @@
           <a href="sellers.html">For Sellers <span class="nav-arrow">&#9662;</span></a>
           <div class="dropdown">
             <a href="sellers.html#guide">Seller's Guide</a>
-            <a href="sellers.html#process">The Selling Process</a>
             <a href="sellers.html#valuation">Home Valuation</a>
             <a href="sellers.html#rent-or-buy">Rent or Buy Calculator</a>
             <a href="sellers.html#contact">Get In Touch</a>
@@ -59,14 +58,6 @@
             <a href="resources.html#links">Helpful Links</a>
             <a href="resources.html#newsletter">Leashes and Listings</a>
             <a href="resources.html#contact">Ask Kya</a>
-          </div>
-        </li>
-        <li class="has-dropdown">
-          <a href="stats.html">Market Stats <span class="nav-arrow">&#9662;</span></a>
-          <div class="dropdown">
-            <a href="stats.html#county-stats">Stats by County</a>
-            <a href="stats.html#overview">All Counties at a Glance</a>
-            <a href="stats.html#contact">Get In Touch</a>
           </div>
         </li>
         <li><a href="#contact" class="nav-cta">Work With Me</a></li>
@@ -87,7 +78,6 @@
       <a href="buyers.html#calculator" class="nav-sub">Mortgage Calculator</a>
       <a href="sellers.html">For Sellers</a>
       <a href="sellers.html#guide" class="nav-sub">Seller's Guide</a>
-      <a href="sellers.html#process" class="nav-sub">The Selling Process</a>
       <a href="sellers.html#valuation" class="nav-sub">Home Valuation</a>
       <a href="sellers.html#rent-or-buy" class="nav-sub">Rent or Buy Calculator</a>
       <a href="resources.html">Resources</a>
@@ -95,20 +85,18 @@
       <a href="resources.html#guides" class="nav-sub">Guides from Kya</a>
       <a href="resources.html#links" class="nav-sub">Helpful Links</a>
       <a href="resources.html#newsletter" class="nav-sub">Leashes and Listings</a>
-      <a href="stats.html">Market Stats</a>
-      <a href="stats.html#county-stats" class="nav-sub">Stats by County</a>
-      <a href="stats.html#overview" class="nav-sub">All Counties at a Glance</a>
       <a href="#contact">Work With Me</a>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section class="hero hero-short" id="home">
+  <section class="hero hero-home" id="home">
+    <img class="hero-bg" src="assets/atlanta-hero.jpg" alt="Atlanta skyline from Piedmont Park" />
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">Guides &amp; Expert Insights · Atlanta, GA</p>
-      <h1 class="hero-headline">Real Estate<br /><em>Resources</em></h1>
-      <p class="hero-sub">Everything you need to buy, sell, or stay informed. Curated by Kya.</p>
+      <h1 class="hero-headline">Resources &amp; Guides</h1>
+      <div class="hero-divider"></div>
+      <p class="hero-sub">Everything you need to buy, sell, or stay informed.</p>
     </div>
   </section>
 
@@ -116,15 +104,114 @@
   <div class="res-subnav" id="resSubnav">
     <div class="container">
       <div class="res-subnav-inner">
+        <a href="#newsletter" class="res-subnav-btn">Newsletter</a>
         <a href="#videos"    class="res-subnav-btn">Expert Videos</a>
         <a href="#guides"    class="res-subnav-btn">Free Guides</a>
         <a href="#links"     class="res-subnav-btn">Helpful Links</a>
-        <a href="#newsletter" class="res-subnav-btn">Newsletter</a>
         <a href="stats.html" class="res-subnav-btn">Market Stats</a>
         <a href="#contact"   class="res-subnav-btn res-subnav-cta">Work With Kya</a>
       </div>
     </div>
   </div>
+
+  <!-- NEWSLETTER -->
+  <section class="section newsletter-section" id="newsletter">
+    <div class="container">
+      <div class="nl-simple">
+        <div class="nl-desc">
+          <p class="section-eyebrow">Monthly Market Update</p>
+          <h2 class="section-title">Leashes &amp; Listings <span style="font-size:0.6em; font-family:var(--font-sans); font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--champagne-dark); vertical-align:middle;">Newsletter</span></h2>
+          <p>Leashes &amp; Listings is the newsletter where Atlanta real estate meets dog rescue. Every issue brings you local market updates, hand-picked listings, and a spotlight on a pup who's searching for their forever home &mdash; just like your buyers. Whether you're buying, selling, or just a dog person who likes to stay in the know, there's a spot for you in the pack.</p>
+        </div>
+        <div class="nl-signup">
+          <p class="nl-signup-eyebrow">Never miss an issue</p>
+          <h3>Subscribe Free</h3>
+          <p>Monthly market updates + dog-friendly Atlanta tips delivered to your inbox.</p>
+          <form id="newsletterForm">
+            <input type="email" placeholder="Your email address" name="signupEmail" required />
+            <button type="submit" class="btn btn-gold">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- RECENT ISSUES -->
+      <div class="nl-issues">
+        <p class="nl-issues-label">Latest Issue</p>
+
+        <a href="assets/newsletter-may.pdf" target="_blank" class="nl-issue-card">
+          <div class="nl-issue-cover">
+            <img src="assets/newsletter-may-cover.png" alt="May Newsletter Cover" />
+          </div>
+          <div class="nl-issue-body">
+            <p class="nl-issue-month">May 2025</p>
+            <h4 class="nl-issue-title">Spring Buyers: What to Know Now</h4>
+            <p class="nl-issue-summary">Spring brought a surge of new listings across Fulton, Cobb, and Cherokee, but so did buyer demand. This issue breaks down the data by county and shares how Kya's clients are winning offers in a competitive spring market.</p>
+            <span class="nl-issue-cta">Read Issue &rarr;</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESOURCE LINKS -->
+  <section class="section" id="links">
+    <div class="container">
+      <div class="section-header center">
+        <p class="section-eyebrow">Helpful Links</p>
+        <h2 class="section-title">Learn More</h2>
+      </div>
+      <div class="resources-links">
+        <a href="https://kw.com/blog/part-one-your-first-time-homebuyers-guide" target="_blank" rel="noopener" class="resource-link-card">
+          <div class="rlc-icon">&#127968;</div>
+          <div class="rlc-body">
+            <h4>First-Time Buyer's Guide</h4>
+            <p>Keller Williams' step-by-step series for first-time homebuyers, covering where to start and what to expect.</p>
+            <span class="rlc-cta">Read the Guide &rarr;</span>
+          </div>
+        </a>
+        <a href="https://www.kw.com/blog" target="_blank" rel="noopener" class="resource-link-card">
+          <div class="rlc-icon">&#128221;</div>
+          <div class="rlc-body">
+            <h4>KW Real Estate Blog</h4>
+            <p>Market trends, home tips, investment insights, and practical advice from KW's national team of experts.</p>
+            <span class="rlc-cta">Visit Blog &rarr;</span>
+          </div>
+        </a>
+        <a href="https://www.consumerfinance.gov/owning-a-home/" target="_blank" rel="noopener" class="resource-link-card">
+          <div class="rlc-icon">&#127981;</div>
+          <div class="rlc-body">
+            <h4>CFPB: Owning a Home</h4>
+            <p>The Consumer Financial Protection Bureau's free mortgage and homeownership resource center.</p>
+            <span class="rlc-cta">Explore Tools &rarr;</span>
+          </div>
+        </a>
+        <a href="https://www.nar.realtor/research-and-statistics" target="_blank" rel="noopener" class="resource-link-card">
+          <div class="rlc-icon">&#128202;</div>
+          <div class="rlc-body">
+            <h4>NAR Market Statistics</h4>
+            <p>National Association of REALTORS® data on housing trends, median prices, and market conditions.</p>
+            <span class="rlc-cta">View Data &rarr;</span>
+          </div>
+        </a>
+        <a href="https://www.atlantaga.gov/government/departments/city-planning" target="_blank" rel="noopener" class="resource-link-card">
+          <div class="rlc-icon">&#127961;</div>
+          <div class="rlc-body">
+            <h4>City of Atlanta Planning</h4>
+            <p>Zoning, development plans, and neighborhood initiatives from the City of Atlanta's planning department.</p>
+            <span class="rlc-cta">Learn More &rarr;</span>
+          </div>
+        </a>
+        <a href="buyers.html" class="resource-link-card">
+          <div class="rlc-icon">&#9997;</div>
+          <div class="rlc-body">
+            <h4>Work With Kya</h4>
+            <p>Ready to take the next step? Kya brings data-driven strategy and personal service to every transaction.</p>
+            <span class="rlc-cta">Get Started &rarr;</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- EXPERT VIDEOS -->
   <section class="section" id="videos">
@@ -278,45 +365,6 @@
     </div>
   </section>
 
-  <!-- NEWSLETTER -->
-  <section class="section newsletter-section" id="newsletter">
-    <div class="container">
-      <div class="nl-simple">
-        <div class="nl-desc">
-          <p class="section-eyebrow">Monthly Market Update</p>
-          <h2 class="section-title">Leashes &amp; Listings <span style="font-size:0.6em; font-family:var(--font-sans); font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--champagne-dark); vertical-align:middle;">Newsletter</span></h2>
-          <p>Leashes &amp; Listings is the newsletter where Atlanta real estate meets dog rescue. Every issue brings you local market updates, hand-picked listings, and a spotlight on a pup who's searching for their forever home &mdash; just like your buyers. Whether you're buying, selling, or just a dog person who likes to stay in the know, there's a spot for you in the pack.</p>
-        </div>
-        <div class="nl-signup">
-          <p class="nl-signup-eyebrow">Never miss an issue</p>
-          <h3>Subscribe Free</h3>
-          <p>Monthly market updates + dog-friendly Atlanta tips delivered to your inbox.</p>
-          <form id="newsletterForm">
-            <input type="email" placeholder="Your email address" name="signupEmail" required />
-            <button type="submit" class="btn btn-gold">Subscribe</button>
-          </form>
-        </div>
-      </div>
-
-      <!-- RECENT ISSUES -->
-      <div class="nl-issues">
-        <p class="nl-issues-label">Latest Issue</p>
-
-        <a href="assets/newsletter-may.pdf" target="_blank" class="nl-issue-card">
-          <div class="nl-issue-cover">
-            <img src="assets/newsletter-may-cover.png" alt="May Newsletter Cover" />
-          </div>
-          <div class="nl-issue-body">
-            <p class="nl-issue-month">May 2025</p>
-            <h4 class="nl-issue-title">Spring Buyers: What to Know Now</h4>
-            <p class="nl-issue-summary">Spring brought a surge of new listings across Fulton, Cobb, and Cherokee, but so did buyer demand. This issue breaks down the data by county and shares how Kya's clients are winning offers in a competitive spring market.</p>
-            <span class="nl-issue-cta">Read Issue &rarr;</span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
   <!-- CONTACT -->
   <section class="section contact" id="contact">
     <div class="container contact-grid">
@@ -441,7 +489,7 @@
     });
 
     /* Highlight active section button on scroll */
-    var sections = ['videos', 'guides', 'links', 'newsletter', 'contact'];
+    var sections = ['newsletter', 'videos', 'guides', 'links', 'contact'];
     var btns = {};
     sections.forEach(function (id) {
       btns[id] = document.querySelector('.res-subnav-btn[href="#' + id + '"]');
