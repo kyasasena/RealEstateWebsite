@@ -7,9 +7,8 @@
   <meta name="description" content="Kya Sasena, REALTOR® with Keller Williams Buckhead. Data-driven real estate in Buckhead, Vinings, Brookhaven, Sandy Springs & Dunwoody." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
 
@@ -27,9 +26,6 @@
           <a href="index.html" class="nav-active">Home <span class="nav-arrow">&#9662;</span></a>
           <div class="dropdown">
             <a href="#about">About Kya</a>
-            <a href="#difference">Why Clients Choose Kya</a>
-            <a href="#areas">Atlanta Metro Coverage</a>
-            <a href="#newsletter">Leashes and Listings</a>
             <a href="#contact">Contact</a>
           </div>
         </li>
@@ -79,9 +75,6 @@
     <div class="nav-mobile" id="navMobile">
       <a href="index.html">Home</a>
       <a href="#about" class="nav-sub">About Kya</a>
-      <a href="#difference" class="nav-sub">Why Clients Choose Kya</a>
-      <a href="#areas" class="nav-sub">Atlanta Metro Coverage</a>
-      <a href="#newsletter" class="nav-sub">Leashes and Listings</a>
       <a href="buyers.html">For Buyers</a>
       <a href="buyers.html#guide" class="nav-sub">Buyer's Guide</a>
       <a href="buyers.html#specialties" class="nav-sub">Buyer Specialties</a>
@@ -105,11 +98,13 @@
 
 
   <!-- HERO -->
-  <section class="hero hero-short" id="home">
+  <section class="hero hero-home" id="home">
+    <img class="hero-bg" src="assets/atlanta-hero.jpg" alt="Atlanta skyline from Piedmont Park" />
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1 class="hero-headline">Atlanta Real Estate<br /><em>with Purpose &amp; Precision</em></h1>
-      <p class="hero-sub">Where Strategy meets heart.</p>
+      <h1 class="hero-headline">Kya Sasena Real Estate</h1>
+      <div class="hero-divider"></div>
+      <p class="hero-sub">Where strategy meets heart.</p>
     </div>
   </section>
 
@@ -122,179 +117,94 @@
         </div>
         <div class="about-split-body">
           <p class="section-eyebrow">About Kya</p>
-          <h2 class="section-title">Strategy Meets Heart</h2>
-          <p class="about-lead">I'm Kya Sasena, a REALTOR® with Keller Williams Realty Buckhead. I bring a background that's anything but typical.</p>
-          <p>Before real estate, I worked in data analytics and animal rescue. That combination shapes everything about how I operate: analytical, precise, patient, and genuinely invested in the people I serve.</p>
-          <p>My job is to translate complex market data into clear, confident decisions, so you always know where you stand and why.</p>
-          <div class="about-tags">
-            <span class="about-tag">&#9650;&nbsp; Data-Driven</span>
-            <span class="about-tag">&#9670;&nbsp; Detail-Oriented</span>
-            <span class="about-tag">&#9733;&nbsp; Sharp Negotiator</span>
-          </div>
+          <p class="about-lead">I'm Kya Sasena, a REALTOR® with Keller Williams Realty Buckhead and my path to real estate is anything but typical. Before helping clients buy and sell homes, I spent years in data analytics and animal rescue. That combination might sound unexpected, but it shaped exactly the kind of agent I am today.</p>
+          <p>I approach every transaction the way I approached data: methodically, patiently, and with a genuine investment in the outcome. I translate complex market information into clear, confident decisions so you always know where you stand and why.</p>
+          <p>But numbers only tell part of the story. What drives me is the people. Whether you're buying your first home, selling a place full of memories, or navigating a tough market, I show up with the same care and precision every time.</p>
           <div class="about-ctas">
             <a href="#contact" class="btn btn-gold">Work With Me</a>
-            <a href="#difference" class="btn btn-outline-dark">Why Clients Choose Kya</a>
           </div>
           <div class="social-links" style="margin-top:1.5rem">
-            <a href="#" class="social-btn" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-            <a href="#" class="social-btn" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-            <a href="#" class="social-btn" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="tel:+17347887788" class="social-btn social-btn-phone" aria-label="Call Kya">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C9.39 21 3 14.61 3 7a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/kyasasena" target="_blank" class="social-btn" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="https://www.linkedin.com/in/kya-sasena" target="_blank" class="social-btn" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://www.facebook.com/KyaSasena" target="_blank" class="social-btn" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
           </div>
+        </div>
+      </div>
+
+      <div class="diff-grid about-diff-grid" id="difference">
+        <div class="diff-card">
+          <div class="diff-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h3>Data-driven decisions</h3>
+          <p>I translate market trends into plain language so you always know exactly where you stand.</p>
+        </div>
+        <div class="diff-card">
+          <div class="diff-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3>Genuinely invested</h3>
+          <p>This is one of the biggest decisions of your life. I treat it that way — every single time.</p>
+        </div>
+        <div class="diff-card">
+          <div class="diff-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>Deep local knowledge</h3>
+          <p>North Atlanta from Buckhead to Alpharetta — I know the streets, the schools, and the market.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DIFFERENCE -->
-  <section class="section difference" id="difference">
-    <div class="container">
-      <div class="section-header center">
-        <p class="section-eyebrow">The Kya Difference</p>
-        <h2 class="section-title" style="color:var(--white)">Why Clients Choose Kya</h2>
+  <!-- HOW I CAN HELP -->
+  <section class="help-section">
+    <div class="help-inner">
+      <div class="help-header">
+        <p class="help-eyebrow">How I can help</p>
+        <h2 class="help-heading">Whether you're buying, selling, or exploring</h2>
       </div>
-      <div class="diff-grid">
-        <div class="diff-card">
-          <div class="diff-num">01</div>
-          <h3>Market Intelligence</h3>
-          <p>Pricing trends, absorption rates, and neighborhood data, turned into your competitive edge.</p>
-        </div>
-        <div class="diff-card">
-          <div class="diff-num">02</div>
-          <h3>Strategy Built for You</h3>
-          <p>No cookie-cutter approach. Your goals, your timeline, your plan. From day one.</p>
-        </div>
-        <div class="diff-card">
-          <div class="diff-num">03</div>
-          <h3>Sharp Negotiation</h3>
-          <p>Whether buying or selling, I negotiate with precision and purpose. Always in your corner.</p>
-        </div>
-        <div class="diff-card">
-          <div class="diff-num">04</div>
-          <h3>Total Transparency</h3>
-          <p>You'll always know exactly where things stand. No surprises, no radio silence.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      <div class="help-grid">
 
-  <!-- AREAS SERVED — Leaflet county map -->
-  <section class="section areas" id="areas">
-    <div class="container">
-      <div class="section-header center">
-        <p class="section-eyebrow">Where I Work</p>
-        <h2 class="section-title">Atlanta Metro Coverage</h2>
-      </div>
-      <div class="areas-split">
-        <div id="county-map"></div>
-        <div class="county-list-wrap">
-          <p class="county-list-title">Counties Served</p>
-          <div class="county-item" data-county="fulton">
-            <span class="county-dot" style="background:#c9a84c"></span>
-            <span class="county-name">Fulton County</span>
-            <span class="county-tag">Primary</span>
+        <div class="help-card">
+          <div class="help-card-top">
+            <div class="help-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/><polyline points="9 21 9 12 15 12 15 21"/></svg>
+            </div>
+            <h3 class="help-card-title">Buying a home</h3>
           </div>
-          <div class="county-item" data-county="cobb">
-            <span class="county-dot"></span>
-            <span class="county-name">Cobb County</span>
-          </div>
-          <div class="county-item" data-county="cherokee">
-            <span class="county-dot"></span>
-            <span class="county-name">Cherokee County</span>
-          </div>
-          <div class="county-item" data-county="henry">
-            <span class="county-dot"></span>
-            <span class="county-name">Henry County</span>
-          </div>
-          <div class="county-item" data-county="dekalb">
-            <span class="county-dot"></span>
-            <span class="county-name">DeKalb County</span>
-          </div>
-          <div class="county-item" data-county="gwinnett">
-            <span class="county-dot"></span>
-            <span class="county-name">Gwinnett County</span>
-          </div>
-          <div class="county-item" data-county="forsyth">
-            <span class="county-dot"></span>
-            <span class="county-name">Forsyth County</span>
-          </div>
-          <div class="county-item" data-county="clayton">
-            <span class="county-dot"></span>
-            <span class="county-name">Clayton County</span>
-          </div>
-          <div class="county-item" data-county="douglas">
-            <span class="county-dot"></span>
-            <span class="county-name">Douglas County</span>
-          </div>
-          <div class="county-item" data-county="fayette">
-            <span class="county-dot"></span>
-            <span class="county-name">Fayette County</span>
-          </div>
-          <p class="county-note">Hover or click a county for market stats.</p>
+          <div class="help-divider"></div>
+          <p class="help-card-desc">From first showing to closing day, I guide you through every step with clear data and no pressure.</p>
+          <a href="buyers.html" class="help-link">Learn more <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- NEWSLETTER -->
-  <section class="section newsletter-section" id="newsletter">
-    <div class="container">
-      <div class="nl-simple">
-        <div class="nl-desc">
-          <p class="section-eyebrow">Monthly Market Update</p>
-          <h2 class="section-title">Leashes and Listings</h2>
-          <p>Leashes &amp; Listings is the newsletter where Atlanta real estate meets dog rescue. Every issue brings you local market updates, hand-picked listings, and a spotlight on a pup who's searching for their forever home, just like your buyers. Whether you're buying, selling, or just a dog person who likes to stay in the know, there's a spot for you in the pack.</p>
+        <div class="help-card">
+          <div class="help-card-top">
+            <div class="help-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <h3 class="help-card-title">Selling your home</h3>
+          </div>
+          <div class="help-divider"></div>
+          <p class="help-card-desc">Strategic pricing, professional marketing, and a network built over years of Atlanta market experience.</p>
+          <a href="sellers.html" class="help-link">Learn more <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
-        <div class="nl-signup">
-          <p class="nl-signup-eyebrow">Never miss an issue</p>
-          <h3>Subscribe Free</h3>
-          <p>Monthly market updates + dog-friendly Atlanta tips delivered to your inbox.</p>
-          <form id="newsletterForm">
-            <input type="email" placeholder="Your email address" name="signupEmail" required />
-            <button type="submit" class="btn btn-gold">Subscribe</button>
-          </form>
+
+        <div class="help-card">
+          <div class="help-card-top">
+            <div class="help-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+            </div>
+            <h3 class="help-card-title">Neighborhood guidance</h3>
+          </div>
+          <div class="help-divider"></div>
+          <p class="help-card-desc">Not sure where to look? I'll match your lifestyle and budget to the right Atlanta neighborhood.</p>
+          <a href="#contact" class="help-link">Explore areas <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
-      </div>
 
-      <!-- RECENT ISSUES -->
-      <div class="nl-issues">
-        <p class="nl-issues-label">Recent Issues</p>
-
-        <a href="assets/newsletter-june.pdf" target="_blank" class="nl-issue-card">
-          <div class="nl-issue-cover">
-            <img src="assets/newsletter-june-cover.png" alt="June Newsletter Cover" />
-          </div>
-          <div class="nl-issue-body">
-            <p class="nl-issue-month">June 2025</p>
-            <h4 class="nl-issue-title">Summer Market Heats Up</h4>
-            <p class="nl-issue-summary">Atlanta's summer inventory is tightening again. Learn what that means for buyers trying to compete and sellers deciding whether now is the right moment to list. Plus: dog-friendly patios opening across Buckhead this season.</p>
-            <span class="nl-issue-cta">Read Issue &rarr;</span>
-          </div>
-        </a>
-
-        <a href="assets/newsletter-may.pdf" target="_blank" class="nl-issue-card">
-          <div class="nl-issue-cover">
-            <img src="assets/newsletter-may-cover.png" alt="May Newsletter Cover" />
-          </div>
-          <div class="nl-issue-body">
-            <p class="nl-issue-month">May 2025</p>
-            <h4 class="nl-issue-title">Spring Buyers: What to Know Now</h4>
-            <p class="nl-issue-summary">Spring brought a surge of new listings across Fulton, Cobb, and Cherokee, but so did buyer demand. This issue breaks down the data by county and shares how Kya's clients are winning offers in a competitive spring market.</p>
-            <span class="nl-issue-cta">Read Issue &rarr;</span>
-          </div>
-        </a>
-
-        <a href="assets/newsletter-december.pdf" target="_blank" class="nl-issue-card">
-          <div class="nl-issue-cover nl-issue-cover-placeholder">
-            <span class="nl-placeholder-month">DEC</span>
-            <span class="nl-placeholder-year">2024</span>
-          </div>
-          <div class="nl-issue-body">
-            <p class="nl-issue-month">December 2024</p>
-            <h4 class="nl-issue-title">Year in Review: Atlanta Real Estate</h4>
-            <p class="nl-issue-summary">A look back at the Atlanta metro market in 2024: what shifted, what held steady, and what it means heading into 2025. Includes a neighborhood-by-neighborhood price recap and Kya's outlook for the year ahead.</p>
-            <span class="nl-issue-cta">Read Issue &rarr;</span>
-          </div>
-        </a>
       </div>
     </div>
   </section>
@@ -352,19 +262,6 @@
             <input type="tel" id="phone" name="phone" placeholder="(404) 555-0000" />
           </div>
           <div class="form-group">
-            <label for="interest">I'm Interested In</label>
-            <select id="interest" name="interest">
-              <option value="">Select one...</option>
-              <option value="buying">Buying a Home</option>
-              <option value="selling">Selling a Home</option>
-              <option value="both">Buying &amp; Selling</option>
-              <option value="valuation">Free Home Valuation</option>
-              <option value="investing">Investment Property</option>
-              <option value="relocation">Relocation to Atlanta</option>
-              <option value="other">Just Exploring</option>
-            </select>
-          </div>
-          <div class="form-group">
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="3" placeholder="Tell me a little about what you're looking for..."></textarea>
           </div>
@@ -392,7 +289,6 @@
           <li><a href="#about">About Kya</a></li>
           <li><a href="buyers.html">For Buyers</a></li>
           <li><a href="sellers.html">For Sellers</a></li>
-          <li><a href="#newsletter">Newsletter</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -413,100 +309,6 @@
   </footer>
 
   <script src="script.js"></script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
-  <script>
-  (function () {
-    var SERVED = {
-      '13121': { name: 'Fulton',   slug: 'fulton',   primary: true },
-      '13067': { name: 'Cobb',     slug: 'cobb' },
-      '13057': { name: 'Cherokee', slug: 'cherokee' },
-      '13151': { name: 'Henry',    slug: 'henry' },
-      '13089': { name: 'DeKalb',   slug: 'dekalb' },
-      '13135': { name: 'Gwinnett', slug: 'gwinnett' },
-      '13117': { name: 'Forsyth',  slug: 'forsyth' },
-      '13063': { name: 'Clayton',  slug: 'clayton' },
-      '13097': { name: 'Douglas',  slug: 'douglas' },
-      '13113': { name: 'Fayette',  slug: 'fayette' }
-    };
 
-    var STATS_BASE = 'https://therealestatestats.com/georgia/';
-
-    var map = L.map('county-map', {
-      zoomControl: true,
-      scrollWheelZoom: false,
-      attributionControl: false
-    });
-
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
-      subdomains: 'abcd',
-      maxZoom: 19
-    }).addTo(map);
-
-    function setListHighlight(slug, on) {
-      var el = document.querySelector('.county-item[data-county="' + slug + '"]');
-      if (!el) return;
-      if (on) el.classList.add('county-item-active');
-      else el.classList.remove('county-item-active');
-    }
-
-    fetch('https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json')
-      .then(function (r) { return r.json(); })
-      .then(function (us) {
-        var geojson = topojson.feature(us, us.objects.counties);
-
-        var servedFeatures = geojson.features.filter(function (f) {
-          return SERVED[String(f.id)];
-        });
-        var gaFeatures = geojson.features.filter(function (f) {
-          return String(f.id).startsWith('13') && !SERVED[String(f.id)];
-        });
-
-        /* Background Georgia counties — muted */
-        L.geoJSON({ type: 'FeatureCollection', features: gaFeatures }, {
-          style: { color: '#ccc', weight: 0.6, fillColor: '#f0ede8', fillOpacity: 0.4 }
-        }).addTo(map);
-
-        /* Served counties — interactive */
-        var servedLayer = L.geoJSON({ type: 'FeatureCollection', features: servedFeatures }, {
-          style: function (f) {
-            var info = SERVED[String(f.id)];
-            if (info.primary) return { color: '#8a6a20', weight: 2, fillColor: '#c9a84c', fillOpacity: 0.78 };
-            return { color: '#a08030', weight: 1.2, fillColor: '#e0c87a', fillOpacity: 0.6 };
-          },
-          onEachFeature: function (f, l) {
-            var info = SERVED[String(f.id)];
-            l.bindTooltip(info.name + ' County' + (info.primary ? ' ★' : '') + '<br><span style="font-size:0.75em;opacity:0.8">Click for market stats</span>', {
-              sticky: true, direction: 'top'
-            });
-
-            l.on('mouseover', function () {
-              l.setStyle({ fillOpacity: 0.95, weight: 2.5 });
-              setListHighlight(info.slug, true);
-            });
-            l.on('mouseout', function () {
-              servedLayer.resetStyle(l);
-              setListHighlight(info.slug, false);
-            });
-            l.on('click', function () {
-              window.open(STATS_BASE + '#' + info.slug, '_blank');
-            });
-          }
-        }).addTo(map);
-
-        /* Also wire up list items to highlight map on hover */
-        document.querySelectorAll('.county-item[data-county]').forEach(function (el) {
-          el.style.cursor = 'pointer';
-          el.addEventListener('click', function () {
-            var slug = el.getAttribute('data-county');
-            window.open(STATS_BASE + '#' + slug, '_blank');
-          });
-        });
-
-        /* Zoom tight to only served counties */
-        map.fitBounds(servedLayer.getBounds(), { padding: [24, 24] });
-      });
-  })();
-  </script>
 </body>
 </html>
