@@ -28,7 +28,7 @@
             <a href="index.html#about">About Kya</a>
             <a href="index.html#difference">Why Clients Choose Kya</a>
             <a href="index.html#areas">Atlanta Metro Coverage</a>
-            <a href="index.html#newsletter">Leashes and Listings</a>
+            <a href="index.html#newsletter">Monthly Newsletter</a>
             <a href="index.html#contact">Contact</a>
           </div>
         </li>
@@ -53,10 +53,10 @@
         <li class="has-dropdown">
           <a href="resources.html" class="nav-active">Resources <span class="nav-arrow">&#9662;</span></a>
           <div class="dropdown">
-            <a href="resources.html#videos">Expert Insights</a>
-            <a href="resources.html#guides">Guides from Kya</a>
+            <a href="resources.html#newsletter">Monthly Newsletter</a>
             <a href="resources.html#links">Helpful Links</a>
-            <a href="resources.html#newsletter">Leashes and Listings</a>
+            <a href="resources.html#guides">Guides from Kya</a>
+            <a href="resources.html#videos">Expert Insights</a>
             <a href="resources.html#contact">Ask Kya</a>
           </div>
         </li>
@@ -71,7 +71,7 @@
       <a href="index.html#about" class="nav-sub">About Kya</a>
       <a href="index.html#difference" class="nav-sub">Why Clients Choose Kya</a>
       <a href="index.html#areas" class="nav-sub">Atlanta Metro Coverage</a>
-      <a href="index.html#newsletter" class="nav-sub">Leashes and Listings</a>
+      <a href="index.html#newsletter" class="nav-sub">Monthly Newsletter</a>
       <a href="buyers.html">For Buyers</a>
       <a href="buyers.html#guide" class="nav-sub">Buyer's Guide</a>
       <a href="buyers.html#specialties" class="nav-sub">Buyer Specialties</a>
@@ -81,10 +81,10 @@
       <a href="sellers.html#valuation" class="nav-sub">Home Valuation</a>
       <a href="sellers.html#rent-or-buy" class="nav-sub">Rent or Buy Calculator</a>
       <a href="resources.html">Resources</a>
-      <a href="resources.html#videos" class="nav-sub">Expert Insights</a>
-      <a href="resources.html#guides" class="nav-sub">Guides from Kya</a>
+      <a href="resources.html#newsletter" class="nav-sub">Monthly Newsletter</a>
       <a href="resources.html#links" class="nav-sub">Helpful Links</a>
-      <a href="resources.html#newsletter" class="nav-sub">Leashes and Listings</a>
+      <a href="resources.html#guides" class="nav-sub">Guides from Kya</a>
+      <a href="resources.html#videos" class="nav-sub">Expert Insights</a>
       <a href="#contact">Work With Me</a>
     </div>
   </nav>
@@ -127,10 +127,12 @@
           <p class="nl-signup-eyebrow">Never miss an issue</p>
           <h3>Subscribe Free</h3>
           <p>Monthly market updates + dog-friendly Atlanta tips delivered to your inbox.</p>
-          <form id="newsletterForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="fs-nl-success" data-fs-success>&#10003;&nbsp; You're subscribed! Watch your inbox for the next issue.</div>
+          <div class="fs-error-msg" data-fs-error></div>
+          <form id="newsletterForm">
             <input type="hidden" name="_subject" value="New Newsletter Signup — Leashes & Listings" />
-            <input type="email" placeholder="Your email address" name="email" required />
-            <button type="submit" class="btn btn-gold">Subscribe</button>
+            <input type="email" placeholder="Your email address" name="email" required data-fs-field />
+            <button type="submit" class="btn btn-gold" data-fs-submit-btn>Subscribe</button>
           </form>
         </div>
       </div>
@@ -329,32 +331,36 @@
         </div>
       </div>
       <div class="contact-form-wrap">
-        <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="fs-success-msg" data-fs-success>
+          <p>&#10003;&nbsp; Message sent! Kya will be in touch within a few hours.</p>
+        </div>
+        <div class="fs-error-msg" data-fs-error></div>
+        <form class="contact-form" id="contactForm">
           <input type="hidden" name="_subject" value="New Message — Resources Page" />
           <h3>Send Me a Message</h3>
           <div class="form-row">
             <div class="form-group">
               <label for="firstName">First Name</label>
-              <input type="text" id="firstName" name="firstName" placeholder="Jane" required />
+              <input type="text" id="firstName" name="firstName" placeholder="Jane" required data-fs-field />
             </div>
             <div class="form-group">
               <label for="lastName">Last Name</label>
-              <input type="text" id="lastName" name="lastName" placeholder="Doe" required />
+              <input type="text" id="lastName" name="lastName" placeholder="Doe" required data-fs-field />
             </div>
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="jane@email.com" required />
+            <input type="email" id="email" name="email" placeholder="jane@email.com" required data-fs-field />
           </div>
           <div class="form-group">
             <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" placeholder="(404) 555-0000" />
+            <input type="tel" id="phone" name="phone" placeholder="(404) 555-0000" data-fs-field />
           </div>
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4" placeholder="What can I help you with?"></textarea>
+            <textarea id="message" name="message" rows="4" placeholder="What can I help you with?" data-fs-field></textarea>
           </div>
-          <button type="submit" class="btn btn-gold full-width">Send Message</button>
+          <button type="submit" class="btn btn-gold full-width" data-fs-submit-btn>Send Message</button>
           <p class="form-note">Typically responds within a few hours. Information kept private.</p>
         </form>
       </div>
@@ -452,5 +458,11 @@
     onScroll();
   })();
   </script>
+  <script>
+    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+    formspree('initForm', { formElement: '#newsletterForm', formId: 'maqvrrzz' });
+    formspree('initForm', { formElement: '#contactForm',    formId: 'maqvrrzz' });
+  </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>

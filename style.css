@@ -958,9 +958,10 @@ a.spec-card.featured:hover { box-shadow: var(--shadow-lg); }
   .about-ctas { flex-direction: column; }
   .about-body { text-align: center; }
   .about-divider { margin-left: auto; margin-right: auto; }
-  .about-actions { justify-content: center; }
+  .about-actions { flex-direction: column; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; }
+  .about-visual { max-width: 100%; }
   .about-photo-wrap { height: auto; }
-  .about-photo-wrap img { height: auto; object-fit: contain; }
+  .about-photo-wrap img { width: 100%; height: auto; object-fit: cover; object-position: center top; }
   .signup-form { flex-direction: column; align-items: stretch; }
   .signup-form input { min-width: unset; }
   .form-row { grid-template-columns: 1fr; }
@@ -1193,5 +1194,23 @@ a.spec-card.featured:hover { box-shadow: var(--shadow-lg); }
   .snapshot-bar { grid-template-columns: 1fr; }
   .snapshot-col { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.09); padding: 0.75rem 0; }
   .snapshot-col:last-child { border-bottom: none; }
+}
+
+/* Formspree AJAX states */
+[data-fs-success] { display: none; }
+[data-fs-error]   { display: none; }
+.fs-success-msg {
+  background: #f0fdf4; border: 1px solid #86efac;
+  border-radius: var(--radius); padding: 1rem 1.25rem;
+  text-align: center; color: #166534; font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+.fs-error-msg {
+  background: #fef2f2; border: 1px solid #fca5a5;
+  border-radius: var(--radius); padding: 0.75rem 1rem;
+  color: #dc2626; font-size: 0.85rem; margin-bottom: 1rem;
+}
+.fs-nl-success {
+  padding: 1rem 0; color: #166534; font-size: 0.95rem; font-weight: 500;
 }
 

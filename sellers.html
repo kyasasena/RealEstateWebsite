@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>For Sellers | Kya Sasena, REALTOR® | Atlanta</title>
+  <title>For Sellers | Kya Sasena, REALTORÂ® | Atlanta</title>
   <meta name="description" content="Selling your Atlanta home? Kya Sasena delivers data-driven pricing, professional marketing, and expert negotiation to get you top dollar." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,7 +19,7 @@
       <div class="nav-logo-divider"></div>
       <a href="index.html" class="nav-logo">
         <span class="logo-name">Kya Sasena</span>
-        <span class="logo-title">REALTOR®</span>
+        <span class="logo-title">REALTORÂ®</span>
       </a>
       <ul class="nav-links">
         <li class="has-dropdown">
@@ -28,7 +28,7 @@
             <a href="index.html#about">About Kya</a>
             <a href="index.html#difference">Why Clients Choose Kya</a>
             <a href="index.html#areas">Atlanta Metro Coverage</a>
-            <a href="index.html#newsletter">Leashes and Listings</a>
+            <a href="index.html#newsletter">Monthly Newsletter</a>
             <a href="index.html#contact">Contact</a>
           </div>
         </li>
@@ -52,10 +52,10 @@
         <li class="has-dropdown">
           <a href="resources.html">Resources <span class="nav-arrow">&#9662;</span></a>
           <div class="dropdown">
-            <a href="resources.html#videos">Expert Insights</a>
-            <a href="resources.html#guides">Guides from Kya</a>
+            <a href="resources.html#newsletter">Monthly Newsletter</a>
             <a href="resources.html#links">Helpful Links</a>
-            <a href="resources.html#newsletter">Leashes and Listings</a>
+            <a href="resources.html#guides">Guides from Kya</a>
+            <a href="resources.html#videos">Expert Insights</a>
             <a href="resources.html#contact">Ask Kya</a>
           </div>
         </li>
@@ -70,7 +70,7 @@
       <a href="index.html#about" class="nav-sub">About Kya</a>
       <a href="index.html#difference" class="nav-sub">Why Clients Choose Kya</a>
       <a href="index.html#areas" class="nav-sub">Atlanta Metro Coverage</a>
-      <a href="index.html#newsletter" class="nav-sub">Leashes and Listings</a>
+      <a href="index.html#newsletter" class="nav-sub">Monthly Newsletter</a>
       <a href="buyers.html">For Buyers</a>
       <a href="buyers.html#guide" class="nav-sub">Buyer's Guide</a>
       <a href="buyers.html#specialties" class="nav-sub">Buyer Specialties</a>
@@ -79,10 +79,10 @@
       <a href="sellers.html#guide" class="nav-sub">Seller's Guide</a>
       <a href="sellers.html#valuation" class="nav-sub">Home Valuation</a>
       <a href="resources.html">Resources</a>
-      <a href="resources.html#videos" class="nav-sub">Expert Insights</a>
-      <a href="resources.html#guides" class="nav-sub">Guides from Kya</a>
+      <a href="resources.html#newsletter" class="nav-sub">Monthly Newsletter</a>
       <a href="resources.html#links" class="nav-sub">Helpful Links</a>
-      <a href="resources.html#newsletter" class="nav-sub">Leashes and Listings</a>
+      <a href="resources.html#guides" class="nav-sub">Guides from Kya</a>
+      <a href="resources.html#videos" class="nav-sub">Expert Insights</a>
       <a href="#contact">Work With Me</a>
     </div>
   </nav>
@@ -129,7 +129,7 @@
   <section class="section whw-section" id="valuation">
     <div class="container">
       <div class="section-header center">
-        <p class="section-eyebrow" style="color:var(--champagne)">Free · No Obligation</p>
+        <p class="section-eyebrow" style="color:var(--champagne)">Free Â· No Obligation</p>
         <h2 class="section-title" style="color:var(--white)">What's My Home Worth?</h2>
         <p class="section-subtitle" style="color:rgba(255,255,255,0.6);margin:0 auto;">A personalized market analysis from Kya, built on real comparables, not an algorithm.</p>
       </div>
@@ -163,12 +163,13 @@
           </div>
         </div>
         <div class="whw-form-wrap">
-          <form class="whw-form" id="whwForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-            <input type="hidden" name="_subject" value="Home Valuation Request — Sellers Page" />
+          <div class="fs-error-msg" data-fs-error style="margin-bottom:1rem;"></div>
+          <form class="whw-form" id="whwForm">
+            <input type="hidden" name="_subject" value="Home Valuation Request â€” Sellers Page" />
             <h3>Tell Me About Your Home</h3>
             <div class="form-group">
               <label for="whwAddress">Property Address</label>
-              <input type="text" id="whwAddress" name="address" placeholder="123 Peachtree St NE, Atlanta, GA" required />
+              <input type="text" id="whwAddress" name="address" placeholder="123 Peachtree St NE, Atlanta, GA" required data-fs-field />
             </div>
             <div class="form-row">
               <div class="form-group">
@@ -193,9 +194,9 @@
                 <label for="whwSqft">Square Footage</label>
                 <select id="whwSqft" name="sqft">
                   <option value="">Select</option>
-                  <option>Under 1,000</option><option>1,000–1,500</option>
-                  <option>1,500–2,000</option><option>2,000–2,500</option>
-                  <option>2,500–3,500</option><option>3,500–5,000</option><option>5,000+</option>
+                  <option>Under 1,000</option><option>1,000â€“1,500</option>
+                  <option>1,500â€“2,000</option><option>2,000â€“2,500</option>
+                  <option>2,500â€“3,500</option><option>3,500â€“5,000</option><option>5,000+</option>
                 </select>
               </div>
               <div class="form-group">
@@ -205,16 +206,16 @@
             </div>
             <div class="form-group">
               <label for="whwEmail">Your Email</label>
-              <input type="email" id="whwEmail" name="email" placeholder="jane@email.com" required />
+              <input type="email" id="whwEmail" name="email" placeholder="jane@email.com" required data-fs-field />
             </div>
             <div class="form-group">
               <label for="whwPhone">Phone (Optional)</label>
-              <input type="tel" id="whwPhone" name="phone" placeholder="(404) 555-0000" />
+              <input type="tel" id="whwPhone" name="phone" placeholder="(404) 555-0000" data-fs-field />
             </div>
-            <button type="submit" class="btn btn-gold full-width">Get My Home Value</button>
+            <button type="submit" class="btn btn-gold full-width" data-fs-submit-btn>Get My Home Value</button>
             <p class="form-note whw-note">Your information is kept private. No spam, ever.</p>
           </form>
-          <div class="whw-success" id="whwSuccess">
+          <div class="whw-success" id="whwSuccess" data-fs-success>
             <div class="whw-success-icon">&#10003;</div>
             <h3>Request Received!</h3>
             <p>Kya will prepare your personalized Comparative Market Analysis and be in touch within 24 hours.</p>
@@ -265,26 +266,30 @@
         </div>
       </div>
       <div class="contact-form-wrap">
-        <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-          <input type="hidden" name="_subject" value="New Message — Sellers Page" />
+        <div class="fs-success-msg" data-fs-success>
+          <p>&#10003;&nbsp; Message sent! Kya will be in touch within a few hours.</p>
+        </div>
+        <div class="fs-error-msg" data-fs-error></div>
+        <form class="contact-form" id="contactForm">
+          <input type="hidden" name="_subject" value="New Message â€” Sellers Page" />
           <h3>Send Me a Message</h3>
           <div class="form-row">
             <div class="form-group">
               <label for="firstName">First Name</label>
-              <input type="text" id="firstName" name="firstName" placeholder="Jane" required />
+              <input type="text" id="firstName" name="firstName" placeholder="Jane" required data-fs-field />
             </div>
             <div class="form-group">
               <label for="lastName">Last Name</label>
-              <input type="text" id="lastName" name="lastName" placeholder="Doe" required />
+              <input type="text" id="lastName" name="lastName" placeholder="Doe" required data-fs-field />
             </div>
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="jane@email.com" required />
+            <input type="email" id="email" name="email" placeholder="jane@email.com" required data-fs-field />
           </div>
           <div class="form-group">
             <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" placeholder="(404) 555-0000" />
+            <input type="tel" id="phone" name="phone" placeholder="(404) 555-0000" data-fs-field />
           </div>
           <div class="form-group">
             <label for="sellerGoal">My Goal</label>
@@ -298,13 +303,13 @@
           </div>
           <div class="form-group">
             <label for="address">Property Address (Optional)</label>
-            <input type="text" id="address" name="address" placeholder="123 Peachtree St, Atlanta, GA" />
+            <input type="text" id="address" name="address" placeholder="123 Peachtree St, Atlanta, GA" data-fs-field />
           </div>
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" name="message" rows="3" placeholder="Tell me about your home and goals..."></textarea>
+            <textarea id="message" name="message" rows="3" placeholder="Tell me about your home and goals..." data-fs-field></textarea>
           </div>
-          <button type="submit" class="btn btn-gold full-width">Send Message</button>
+          <button type="submit" class="btn btn-gold full-width" data-fs-submit-btn>Send Message</button>
           <p class="form-note">Typically responds within a few hours. Information kept private.</p>
         </form>
       </div>
@@ -317,7 +322,7 @@
       <div class="footer-brand">
         <div class="footer-logo">
           <span class="logo-name">Kya Sasena</span>
-          <span class="logo-title">REALTOR®</span>
+          <span class="logo-title">REALTORÂ®</span>
         </div>
         <p>Keller Williams Realty Buckhead<br />Atlanta, Georgia</p>
         <p class="footer-disclaimer">Licensed real estate agent in Georgia. Equal Housing Opportunity.</p>
@@ -344,10 +349,16 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Kya Sasena, REALTOR® &bull; Keller Williams Realty Buckhead &bull; All Rights Reserved</p>
+      <p>&copy; 2025 Kya Sasena, REALTORÂ® &bull; Keller Williams Realty Buckhead &bull; All Rights Reserved</p>
     </div>
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+    formspree('initForm', { formElement: '#whwForm',     formId: 'maqvrrzz' });
+    formspree('initForm', { formElement: '#contactForm', formId: 'maqvrrzz' });
+  </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>

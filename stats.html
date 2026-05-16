@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Market Stats | Kya Sasena, REALTOR® | Atlanta</title>
+  <title>Market Stats | Kya Sasena, REALTORÂ® | Atlanta</title>
   <meta name="description" content="Atlanta metro real estate market statistics: median prices, days on market, inventory levels, and county-by-county breakdowns for buyers and sellers." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,7 +19,7 @@
       <div class="nav-logo-divider"></div>
       <a href="index.html" class="nav-logo">
         <span class="logo-name">Kya Sasena</span>
-        <span class="logo-title">REALTOR®</span>
+        <span class="logo-title">REALTORÂ®</span>
       </a>
       <ul class="nav-links">
         <li class="has-dropdown">
@@ -28,7 +28,7 @@
             <a href="index.html#about">About Kya</a>
             <a href="index.html#difference">Why Clients Choose Kya</a>
             <a href="index.html#areas">Atlanta Metro Coverage</a>
-            <a href="index.html#newsletter">Leashes and Listings</a>
+            <a href="index.html#newsletter">Monthly Newsletter</a>
             <a href="index.html#contact">Contact</a>
           </div>
         </li>
@@ -56,7 +56,7 @@
             <a href="resources.html#videos">Expert Insights</a>
             <a href="resources.html#guides">Guides from Kya</a>
             <a href="resources.html#links">Helpful Links</a>
-            <a href="resources.html#newsletter">Leashes and Listings</a>
+            <a href="resources.html#newsletter">Monthly Newsletter</a>
             <a href="resources.html#contact">Ask Kya</a>
           </div>
         </li>
@@ -79,7 +79,7 @@
       <a href="index.html#about" class="nav-sub">About Kya</a>
       <a href="index.html#difference" class="nav-sub">Why Clients Choose Kya</a>
       <a href="index.html#areas" class="nav-sub">Atlanta Metro Coverage</a>
-      <a href="index.html#newsletter" class="nav-sub">Leashes and Listings</a>
+      <a href="index.html#newsletter" class="nav-sub">Monthly Newsletter</a>
       <a href="buyers.html">For Buyers</a>
       <a href="buyers.html#guide" class="nav-sub">Buyer's Guide</a>
       <a href="buyers.html#specialties" class="nav-sub">Buyer Specialties</a>
@@ -92,7 +92,7 @@
       <a href="resources.html#videos" class="nav-sub">Expert Insights</a>
       <a href="resources.html#guides" class="nav-sub">Guides from Kya</a>
       <a href="resources.html#links" class="nav-sub">Helpful Links</a>
-      <a href="resources.html#newsletter" class="nav-sub">Leashes and Listings</a>
+      <a href="resources.html#newsletter" class="nav-sub">Monthly Newsletter</a>
       <a href="stats.html">Market Stats</a>
       <a href="stats.html#county-stats" class="nav-sub">Stats by County</a>
       <a href="stats.html#overview" class="nav-sub">All Counties at a Glance</a>
@@ -118,17 +118,17 @@
         <div class="snapshot-card">
           <p class="snapshot-label">Median Sales Price</p>
           <p class="snapshot-value">$399,000</p>
-          <p class="snapshot-sub">Georgia · Jan 2026</p>
+          <p class="snapshot-sub">Georgia Â· Jan 2026</p>
         </div>
         <div class="snapshot-card">
           <p class="snapshot-label">Days on Market</p>
           <p class="snapshot-value">43</p>
-          <p class="snapshot-sub">Average · Jan 2026</p>
+          <p class="snapshot-sub">Average Â· Jan 2026</p>
         </div>
         <div class="snapshot-card">
           <p class="snapshot-label">Months Supply</p>
           <p class="snapshot-value">4.0</p>
-          <p class="snapshot-sub">Detached · Jan 2026</p>
+          <p class="snapshot-sub">Detached Â· Jan 2026</p>
         </div>
         <div class="snapshot-card snapshot-card-cta">
           <p class="snapshot-label">Source</p>
@@ -203,7 +203,7 @@
       </div>
       <div class="diff-grid">
         <a href="https://therealestatestats.com/georgia/#fulton" target="_blank" rel="noopener" class="diff-card diff-card-link">
-          <div class="diff-num">★</div>
+          <div class="diff-num">â˜…</div>
           <h3>Fulton County</h3>
           <p>Primary market, Buckhead, Midtown, Vinings. View active listings, price trends & inventory.</p>
         </a>
@@ -293,31 +293,36 @@
         </div>
       </div>
       <div class="contact-form-wrap">
+        <div class="fs-success-msg" data-fs-success>
+          <p>&#10003;&nbsp; Message sent! Kya will be in touch within a few hours.</p>
+        </div>
+        <div class="fs-error-msg" data-fs-error></div>
         <form class="contact-form" id="contactForm">
+          <input type="hidden" name="_subject" value="New Message â€” Market Stats Page" />
           <h3>Send Me a Message</h3>
           <div class="form-row">
             <div class="form-group">
               <label for="firstName">First Name</label>
-              <input type="text" id="firstName" name="firstName" placeholder="Jane" required />
+              <input type="text" id="firstName" name="firstName" placeholder="Jane" required data-fs-field />
             </div>
             <div class="form-group">
               <label for="lastName">Last Name</label>
-              <input type="text" id="lastName" name="lastName" placeholder="Doe" required />
+              <input type="text" id="lastName" name="lastName" placeholder="Doe" required data-fs-field />
             </div>
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="jane@email.com" required />
+            <input type="email" id="email" name="email" placeholder="jane@email.com" required data-fs-field />
           </div>
           <div class="form-group">
             <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" placeholder="(404) 555-0000" />
+            <input type="tel" id="phone" name="phone" placeholder="(404) 555-0000" data-fs-field />
           </div>
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4" placeholder="What can I help you with?"></textarea>
+            <textarea id="message" name="message" rows="4" placeholder="What can I help you with?" data-fs-field></textarea>
           </div>
-          <button type="submit" class="btn btn-gold full-width">Send Message</button>
+          <button type="submit" class="btn btn-gold full-width" data-fs-submit-btn>Send Message</button>
           <p class="form-note">Typically responds within a few hours. Information kept private.</p>
         </form>
       </div>
@@ -330,7 +335,7 @@
       <div class="footer-brand">
         <div class="footer-logo">
           <span class="logo-name">Kya Sasena</span>
-          <span class="logo-title">REALTOR®</span>
+          <span class="logo-title">REALTORÂ®</span>
         </div>
         <p>Keller Williams Realty Buckhead<br />Atlanta, Georgia</p>
         <p class="footer-disclaimer">Licensed real estate agent in Georgia. Equal Housing Opportunity.</p>
@@ -359,7 +364,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Kya Sasena, REALTOR® &bull; Keller Williams Realty Buckhead &bull; All Rights Reserved</p>
+      <p>&copy; 2025 Kya Sasena, REALTORÂ® &bull; Keller Williams Realty Buckhead &bull; All Rights Reserved</p>
     </div>
   </footer>
 
@@ -394,7 +399,7 @@
         var doc = iframe.contentDocument || iframe.contentWindow.document;
         if (doc && doc.body) fallback.style.display = 'none';
       } catch (e) {
-        /* Cross-origin block — show fallback */
+        /* Cross-origin block â€” show fallback */
         fallback.style.display = 'flex';
       }
     });
@@ -423,5 +428,10 @@
     });
   })();
   </script>
+  <script>
+    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+    formspree('initForm', { formElement: '#contactForm', formId: 'maqvrrzz' });
+  </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>

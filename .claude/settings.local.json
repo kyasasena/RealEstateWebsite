@@ -19,7 +19,11 @@
       "PowerShell([System.IO.DriveInfo]::new\\('C'\\).AvailableFreeSpace / 1MB)",
       "PowerShell(git *)",
       "PowerShell(Get-Item *)",
-      "WebFetch(domain:commons.wikimedia.org)"
+      "WebFetch(domain:commons.wikimedia.org)",
+      "Bash(powershell -Command \"\\(Get-Content index.html\\) -replace 'Leashes and Listings', 'Monthly Newsletter' | Set-Content index.html -Encoding utf8\")",
+      "Bash(powershell -Command \"\\(Get-Content buyers.html\\) -replace 'Leashes and Listings', 'Monthly Newsletter' | Set-Content buyers.html -Encoding utf8\")",
+      "Bash(powershell -Command \"\\(Get-Content sellers.html\\) -replace 'Leashes and Listings', 'Monthly Newsletter' | Set-Content sellers.html -Encoding utf8\")",
+      "Bash(powershell -Command \"\\(Get-Content stats.html\\) -replace 'Leashes and Listings', 'Monthly Newsletter' | Set-Content stats.html -Encoding utf8\")"
     ]
   }
 }
