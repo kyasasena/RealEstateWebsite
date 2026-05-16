@@ -127,8 +127,9 @@
           <p class="nl-signup-eyebrow">Never miss an issue</p>
           <h3>Subscribe Free</h3>
           <p>Monthly market updates + dog-friendly Atlanta tips delivered to your inbox.</p>
-          <form id="newsletterForm">
-            <input type="email" placeholder="Your email address" name="signupEmail" required />
+          <form id="newsletterForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <input type="hidden" name="_subject" value="New Newsletter Signup — Leashes & Listings" />
+            <input type="email" placeholder="Your email address" name="email" required />
             <button type="submit" class="btn btn-gold">Subscribe</button>
           </form>
         </div>
@@ -154,7 +155,7 @@
   </section>
 
   <!-- RESOURCE LINKS -->
-  <section class="section" id="links">
+  <section class="section" id="links" style="background:var(--gray-100);">
     <div class="container">
       <div class="section-header center">
         <p class="section-eyebrow">Helpful Links</p>
@@ -305,66 +306,6 @@
     </div>
   </section>
 
-  <!-- RESOURCE LINKS -->
-  <section class="section" id="links">
-    <div class="container">
-      <div class="section-header center">
-        <p class="section-eyebrow">Helpful Links</p>
-        <h2 class="section-title">Learn More</h2>
-      </div>
-      <div class="resources-links">
-        <a href="https://kw.com/blog/part-one-your-first-time-homebuyers-guide" target="_blank" rel="noopener" class="resource-link-card">
-          <div class="rlc-icon">&#127968;</div>
-          <div class="rlc-body">
-            <h4>First-Time Buyer's Guide</h4>
-            <p>Keller Williams' step-by-step series for first-time homebuyers, covering where to start and what to expect.</p>
-            <span class="rlc-cta">Read the Guide &rarr;</span>
-          </div>
-        </a>
-        <a href="https://www.kw.com/blog" target="_blank" rel="noopener" class="resource-link-card">
-          <div class="rlc-icon">&#128221;</div>
-          <div class="rlc-body">
-            <h4>KW Real Estate Blog</h4>
-            <p>Market trends, home tips, investment insights, and practical advice from KW's national team of experts.</p>
-            <span class="rlc-cta">Visit Blog &rarr;</span>
-          </div>
-        </a>
-        <a href="https://www.consumerfinance.gov/owning-a-home/" target="_blank" rel="noopener" class="resource-link-card">
-          <div class="rlc-icon">&#127981;</div>
-          <div class="rlc-body">
-            <h4>CFPB: Owning a Home</h4>
-            <p>The Consumer Financial Protection Bureau's free mortgage and homeownership resource center.</p>
-            <span class="rlc-cta">Explore Tools &rarr;</span>
-          </div>
-        </a>
-        <a href="https://www.nar.realtor/research-and-statistics" target="_blank" rel="noopener" class="resource-link-card">
-          <div class="rlc-icon">&#128202;</div>
-          <div class="rlc-body">
-            <h4>NAR Market Statistics</h4>
-            <p>National Association of REALTORS® data on housing trends, median prices, and market conditions.</p>
-            <span class="rlc-cta">View Data &rarr;</span>
-          </div>
-        </a>
-        <a href="https://www.atlantaga.gov/government/departments/city-planning" target="_blank" rel="noopener" class="resource-link-card">
-          <div class="rlc-icon">&#127961;</div>
-          <div class="rlc-body">
-            <h4>City of Atlanta Planning</h4>
-            <p>Zoning, development plans, and neighborhood initiatives from the City of Atlanta's planning department.</p>
-            <span class="rlc-cta">Learn More &rarr;</span>
-          </div>
-        </a>
-        <a href="buyers.html" class="resource-link-card">
-          <div class="rlc-icon">&#9997;</div>
-          <div class="rlc-body">
-            <h4>Work With Kya</h4>
-            <p>Ready to take the next step? Kya brings data-driven strategy and personal service to every transaction.</p>
-            <span class="rlc-cta">Get Started &rarr;</span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
   <!-- CONTACT -->
   <section class="section contact" id="contact">
     <div class="container contact-grid">
@@ -388,7 +329,8 @@
         </div>
       </div>
       <div class="contact-form-wrap">
-        <form class="contact-form" id="contactForm">
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <input type="hidden" name="_subject" value="New Message — Resources Page" />
           <h3>Send Me a Message</h3>
           <div class="form-row">
             <div class="form-group">

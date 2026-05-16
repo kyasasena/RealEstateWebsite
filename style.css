@@ -287,6 +287,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    ============================================= */
 .difference { background: var(--charcoal); padding: 2.5rem 0; }
 .diff-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+#guides .diff-grid { grid-template-columns: repeat(4, 1fr); }
 .about-diff-grid .diff-card { background: var(--charcoal); border-color: transparent; }
 .about-diff-grid .diff-card:hover { background: var(--charcoal-mid); border-color: var(--champagne); transform: translateY(-3px); }
 .about-diff-grid .diff-icon { color: var(--champagne); }
@@ -955,6 +956,11 @@ a.spec-card.featured:hover { box-shadow: var(--shadow-lg); }
   .process-cols .step:nth-child(even) { padding-left: 0; border-left: none; }
   .process-cols .step:nth-last-child(2):nth-child(odd) { border-bottom: 1px solid var(--gray-200); }
   .about-ctas { flex-direction: column; }
+  .about-body { text-align: center; }
+  .about-divider { margin-left: auto; margin-right: auto; }
+  .about-actions { justify-content: center; }
+  .about-photo-wrap { height: auto; }
+  .about-photo-wrap img { height: auto; object-fit: contain; }
   .signup-form { flex-direction: column; align-items: stretch; }
   .signup-form input { min-width: unset; }
   .form-row { grid-template-columns: 1fr; }
