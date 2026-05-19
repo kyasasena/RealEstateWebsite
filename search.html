@@ -81,42 +81,30 @@
     </div>
   </nav>
 
-  <!-- SEARCH EMBED -->
+  <!-- PROPERTY SEARCH -->
   <div class="search-embed-wrap" id="search">
 
-    <!-- Top bar -->
+    <!-- Dark header bar -->
     <div class="search-embed-bar">
       <div class="search-embed-bar-left">
         <span class="section-eyebrow" style="color:var(--champagne-dark)">Atlanta Metro MLS</span>
         <h1 class="search-embed-title">Search Properties</h1>
       </div>
-      <a href="https://kyasasena.kw.com/search/sale?viewport=34.10,-84.00,33.60,-84.70"
-         target="_blank" class="search-embed-ext" aria-label="Open search in new tab">
+      <a href="https://kyasasena.kw.com/search/sale?viewport=34.27187813720267,-83.6908203125,33.42676332299381,-85.0091796875"
+         target="_blank" class="search-embed-ext" aria-label="Open full MLS search">
         Open Full Screen &#8599;
       </a>
     </div>
 
-    <!-- Embedded KW search -->
+    <!-- KW MLS search iframe -->
     <iframe
       id="searchFrame"
       class="search-iframe"
-      src="https://kyasasena.kw.com/search/sale?viewport=34.10,-84.00,33.60,-84.70"
-      title="Atlanta property search powered by KW"
+      src="https://kyasasena.kw.com/search/sale?viewport=34.27187813720267,-83.6908203125,33.42676332299381,-85.0091796875"
+      title="Atlanta Metro property search powered by KW"
       allowfullscreen
       loading="lazy">
     </iframe>
-
-    <!-- Fallback: shown if KW blocks iframe embedding -->
-    <div class="search-embed-fallback" id="searchFallback">
-      <div class="search-fallback-inner">
-        <p class="section-eyebrow">Atlanta Metro MLS</p>
-        <h2 class="section-title">Browse Active Listings</h2>
-        <p>Live MLS search is available on KW.com. Click below to browse all Atlanta Metro listings with full map, photos, and details.</p>
-        <a href="https://kyasasena.kw.com/search/sale?viewport=34.10,-84.00,33.60,-84.70"
-           target="_blank" class="btn btn-gold">Open Property Search &rarr;</a>
-        <p class="ps-note" style="margin-top:1rem">Full map &bull; Photos &bull; Price history &bull; Listing details</p>
-      </div>
-    </div>
 
   </div>
 

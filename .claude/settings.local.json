@@ -27,7 +27,9 @@
       "Bash(powershell -Command ' *)",
       "WebFetch(domain:www.mortgagenewsdaily.com)",
       "WebFetch(domain:api.allorigins.win)",
-      "WebFetch(domain:www.federalreserve.gov)"
+      "WebFetch(domain:www.federalreserve.gov)",
+      "WebFetch(domain:kyasasena.kw.com)",
+      "WebFetch(domain:kyasasena.com)"
     ]
   }
 }

@@ -340,45 +340,6 @@ document.querySelectorAll('.diff-card, .spec-card, .step, .svc-item, .nl-card, .
   calculate();
 })();
 
-/* =============================================
-   SEARCH EMBED — iframe fallback detection
-   ============================================= */
-(function () {
-  var frame = document.getElementById('searchFrame');
-  var fallback = document.getElementById('searchFallback');
-  if (!frame || !fallback) return;
-
-  // After load, try to access the iframe document.
-  // If KW blocks embedding, the document is inaccessible — show fallback.
-  frame.addEventListener('load', function () {
-    try {
-      var doc = frame.contentDocument || frame.contentWindow.document;
-      if (!doc || doc.body === null || doc.body.innerHTML.trim() === '') {
-        showFallback();
-      }
-    } catch (e) {
-      showFallback();
-    }
-  });
-
-  // Also show fallback if iframe hasn't loaded anything after 8 seconds
-  var timer = setTimeout(function () {
-    try {
-      var doc = frame.contentDocument || frame.contentWindow.document;
-      if (!doc || doc.body === null || doc.body.innerHTML.trim() === '') {
-        showFallback();
-      }
-    } catch (e) {
-      showFallback();
-    }
-  }, 8000);
-
-  function showFallback() {
-    clearTimeout(timer);
-    frame.style.display = 'none';
-    fallback.style.display = 'flex';
-  }
-})();
 
 /* =============================================
    PROPERTY SEARCH — opens KW search in new tab
