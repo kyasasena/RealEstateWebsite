@@ -339,3 +339,121 @@ document.querySelectorAll('.diff-card, .spec-card, .step, .svc-item, .nl-card, .
 
   calculate();
 })();
+
+/* =============================================
+   SEARCH EMBED — iframe fallback detection
+   ============================================= */
+(function () {
+  var frame = document.getElementById('searchFrame');
+  var fallback = document.getElementById('searchFallback');
+  if (!frame || !fallback) return;
+
+  // After load, try to access the iframe document.
+  // If KW blocks embedding, the document is inaccessible — show fallback.
+  frame.addEventListener('load', function () {
+    try {
+      var doc = frame.contentDocument || frame.contentWindow.document;
+      if (!doc || doc.body === null || doc.body.innerHTML.trim() === '') {
+        showFallback();
+      }
+    } catch (e) {
+      showFallback();
+    }
+  });
+
+  // Also show fallback if iframe hasn't loaded anything after 8 seconds
+  var timer = setTimeout(function () {
+    try {
+      var doc = frame.contentDocument || frame.contentWindow.document;
+      if (!doc || doc.body === null || doc.body.innerHTML.trim() === '') {
+        showFallback();
+      }
+    } catch (e) {
+      showFallback();
+    }
+  }, 8000);
+
+  function showFallback() {
+    clearTimeout(timer);
+    frame.style.display = 'none';
+    fallback.style.display = 'flex';
+  }
+})();
+
+/* =============================================
+   PROPERTY SEARCH — opens KW search in new tab
+   ============================================= */
+(function () {
+  var form = document.getElementById('propertySearchForm');
+  if (!form) return;
+
+  // Update KW_BASE to your actual KW agent site URL if different
+  var KW_BASE = 'https://kyasasena.kw.com/search/sale';
+
+  // Bounding boxes: north,east,south,west
+  var viewports = {
+    'atlanta':           '34.10,-84.00,33.60,-84.70',
+    'buckhead':          '33.88,-84.34,33.80,-84.44',
+    'vinings':           '33.89,-84.42,33.82,-84.51',
+    'brookhaven':        '33.91,-84.29,33.84,-84.37',
+    'sandy-springs':     '33.97,-84.33,33.89,-84.42',
+    'dunwoody':          '33.99,-84.29,33.92,-84.38',
+    'midtown':           '33.82,-84.36,33.75,-84.43',
+    'inman-park':        '33.76,-84.34,33.73,-84.38',
+    'virginia-highland': '33.80,-84.35,33.76,-84.39',
+    'east-cobb':         '34.05,-84.50,33.98,-84.60'
+  };
+
+  function buildUrl(area) {
+    var vp = viewports[area] || viewports['atlanta'];
+    return KW_BASE + '?viewport=' + vp;
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var area = document.getElementById('psNeighborhood').value || 'atlanta';
+    window.open(buildUrl(area), '_blank');
+  });
+
+  // Quick-chip clicks
+  document.querySelectorAll('.ps-chip[data-area]').forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      window.open(buildUrl(this.dataset.area), '_blank');
+    });
+  });
+})();
+
+/* =============================================
+   MORTGAGE RATE — auto-update via FRED API
+   Data: Freddie Mac 30-yr fixed (updates weekly)
+   Get a free API key: fred.stlouisfed.org/docs/api/api_key.html
+   Then paste it below to enable live updates.
+   ============================================= */
+(function () {
+  var FRED_API_KEY = ''; // ← paste your free FRED API key here to enable live updates
+
+  var rateEl  = document.getElementById('mortgageRateValue');
+  var trendEl = document.getElementById('mortgageRateTrend');
+  if (!rateEl || !FRED_API_KEY) return;
+
+  fetch('https://api.stlouisfed.org/fred/series/observations?series_id=MORTGAGE30US&sort_order=desc&limit=2&file_type=json&api_key=' + FRED_API_KEY)
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      var obs = data.observations;
+      if (!obs || !obs[0] || obs[0].value === '.') return;
+      var cur  = parseFloat(obs[0].value);
+      var prev = obs[1] ? parseFloat(obs[1].value) : null;
+      if (isNaN(cur)) return;
+
+      rateEl.textContent = cur.toFixed(2) + '%';
+
+      if (prev && !isNaN(prev)) {
+        var diff = cur - prev;
+        trendEl.textContent = (diff >= 0 ? '+' : '') + diff.toFixed(2) + '% wk/wk';
+        // Rate going up = bad for buyers → trend-down (orange); rate down = good → trend-up (green)
+        trendEl.className = 'snapshot-trend ' + (diff > 0 ? 'trend-down' : diff < 0 ? 'trend-up' : '');
+      }
+    })
+    .catch(function () {});
+})();
+

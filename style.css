@@ -526,6 +526,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .stats-bar-dark .snapshot-sub { color: rgba(255,255,255,0.35); }
 .stats-bar-dark .snapshot-source { color: rgba(255,255,255,0.25); }
 .stats-bar-dark .snapshot-footnote { color: rgba(255,255,255,0.3); border-top: 1px solid rgba(255,255,255,0.08); }
+.snapshot-rate-link { color: inherit; text-decoration-color: rgba(255,255,255,0.2); text-underline-offset: 2px; }
+.snapshot-rate-link:hover { color: rgba(255,255,255,0.65); text-decoration-color: rgba(255,255,255,0.5); }
 .stats-tab-bar { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; justify-content: center; }
 .stats-tab {
   padding: 0.55rem 1.1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500;
@@ -836,6 +838,136 @@ a.spec-card.featured:hover { box-shadow: var(--shadow-lg); }
 }
 .gf-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.25rem; }
 .guide-meta { font-size: 0.72rem; color: var(--gray-400); }
+
+/* =============================================
+   PROPERTY SEARCH (buyers page)
+   ============================================= */
+.ps-section { background: var(--charcoal); }
+
+.ps-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+}
+
+.ps-fields {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr auto;
+  gap: 1rem;
+  align-items: end;
+}
+
+.ps-field { display: flex; flex-direction: column; gap: 0.4rem; }
+
+.ps-field label {
+  font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--champagne-light);
+}
+
+.ps-field select {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--white);
+  border-radius: var(--radius);
+  padding: 0.72rem 2.2rem 0.72rem 0.9rem;
+  font-size: 0.9rem; font-family: var(--font-sans);
+  appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23b4a797' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 0.75rem center;
+  cursor: pointer; transition: border-color var(--transition);
+}
+.ps-field select:focus { outline: none; border-color: var(--champagne); }
+.ps-field select option { background: var(--charcoal-mid); color: var(--white); }
+
+.ps-btn { align-self: end; height: 44px; white-space: nowrap; }
+
+.ps-divider { height: 1px; background: rgba(255,255,255,0.1); margin: 1.5rem 0; }
+
+.ps-quick { display: flex; align-items: center; gap: 0.85rem; flex-wrap: wrap; }
+
+.ps-quick-label {
+  font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--champagne-dark); white-space: nowrap;
+}
+
+.ps-quick-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+.ps-chip {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.75);
+  border-radius: 100px; padding: 0.28rem 0.9rem;
+  font-size: 0.83rem; cursor: pointer;
+  transition: all var(--transition);
+}
+.ps-chip:hover {
+  background: var(--champagne); border-color: var(--champagne);
+  color: var(--charcoal);
+}
+
+.ps-note {
+  text-align: center; font-size: 0.74rem;
+  color: rgba(255,255,255,0.28); margin-top: 1.25rem;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 820px) {
+  .ps-fields { grid-template-columns: 1fr 1fr 1fr; }
+  .ps-field-location { grid-column: 1 / -1; }
+  .ps-btn { grid-column: 1 / -1; width: 100%; height: auto; }
+}
+@media (max-width: 500px) {
+  .ps-fields { grid-template-columns: 1fr 1fr; }
+  .ps-card { padding: 1.25rem; }
+}
+
+/* =============================================
+   SEARCH EMBED (search.html)
+   ============================================= */
+.search-embed-wrap {
+  display: flex; flex-direction: column;
+  min-height: calc(100vh - 72px);
+  padding-top: 72px; /* nav height */
+}
+
+.search-embed-bar {
+  background: var(--charcoal);
+  padding: 1rem 1.5rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  flex-shrink: 0; border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.search-embed-bar-left { display: flex; flex-direction: column; gap: 0.1rem; }
+
+.search-embed-title {
+  font-family: var(--font-display); font-size: 1.35rem;
+  font-weight: 400; color: var(--white); line-height: 1.1;
+}
+
+.search-embed-ext {
+  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em;
+  color: var(--champagne); white-space: nowrap;
+  text-decoration: underline; text-underline-offset: 3px;
+  transition: color var(--transition);
+}
+.search-embed-ext:hover { color: var(--champagne-light); }
+
+.search-iframe {
+  flex: 1; width: 100%; border: none; display: block;
+  min-height: 680px;
+}
+
+.search-embed-fallback {
+  display: none; flex: 1; align-items: center; justify-content: center;
+  background: var(--linen); padding: 3rem 1.5rem;
+}
+.search-fallback-inner {
+  max-width: 520px; text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 1rem;
+}
 
 /* =============================================
    PROCESS COLS (buyers page)
