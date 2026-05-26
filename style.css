@@ -782,8 +782,8 @@ a.spec-card.featured:hover { box-shadow: var(--shadow-lg); }
 .nl-signup h3 { font-family: var(--font-serif); font-size: 1.2rem; color: var(--charcoal); }
 .nl-signup p { font-size: 0.82rem; color: var(--gray-600); line-height: 1.5; }
 .nl-signup form { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.2rem; }
-.nl-signup-row { display: flex; gap: 0.5rem; }
-.nl-signup-row input { flex: 1; min-width: 0; }
+.nl-signup-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.nl-signup-row input { flex: 1; min-width: 160px; }
 .nl-signup input {
   padding: 0.5rem 0.75rem; border: 1.5px solid var(--gray-200); border-radius: var(--radius);
   font-family: var(--font-sans); font-size: 0.85rem; background: var(--white); outline: none;
