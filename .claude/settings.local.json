@@ -33,7 +33,9 @@
       "Bash(python -c \"from PIL import Image; print\\('Pillow OK'\\)\")",
       "Bash(pip install *)",
       "Bash(python *)",
-      "Bash(Remove-Item *)"
+      "Bash(Remove-Item *)",
+      "PowerShell(python -c \"import PyPDF2; print\\('PyPDF2 found'\\)\" 2>$null; python -c \"import fitz; print\\('PyMuPDF found'\\)\" 2>$null; python --version 2>$null)",
+      "PowerShell(python -m pip install pypdf --quiet)"
     ]
   }
 }

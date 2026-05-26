@@ -134,7 +134,10 @@
             <div class="fs-error-msg" data-fs-error></div>
             <form id="newsletterForm">
               <input type="hidden" name="_subject" value="New Newsletter Signup — Atlanta Homes &amp; Hounds" />
-              <input type="email" placeholder="Your email address" name="email" required data-fs-field />
+              <div class="nl-signup-row">
+                <input type="text" placeholder="First &amp; Last Name" name="first_name" required data-fs-field />
+                <input type="email" placeholder="Your email address" name="email" required data-fs-field />
+              </div>
               <button type="submit" class="btn btn-gold" data-fs-submit-btn>Subscribe</button>
             </form>
           </div>
@@ -143,7 +146,7 @@
         <!-- LATEST ISSUE PREVIEW -->
         <div class="nl-issues">
           <p class="nl-issues-label">Latest Issue</p>
-          <a href="assets/newsletter-june-2026.html" target="_blank" class="nl-issue-card">
+          <a href="assets/newsletter-june-2026.pdf" target="_blank" class="nl-issue-card">
             <div class="nl-issue-cover">
               <div class="nl-issue-pages">
                 <img src="assets/Pg1.png" alt="June 2026 Newsletter Page 1" />

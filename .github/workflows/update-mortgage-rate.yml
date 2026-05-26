@@ -1,0 +1,78 @@
+name: Update Mortgage Rate
+
+on:
+  schedule:
+    - cron: '0 14 * * 1-5'  # 9 AM EST, weekdays only
+  workflow_dispatch:         # allow manual trigger
+
+jobs:
+  update-rate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch and update mortgage rate
+        run: |
+          python3 - <<'EOF'
+          import urllib.request
+          import re
+
+          # Fetch FRED 30-year fixed rate CSV (no API key required)
+          url = "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MORTGAGE30US"
+          with urllib.request.urlopen(url) as resp:
+              lines = resp.read().decode().strip().splitlines()
+
+          # Last two data rows
+          def parse(row):
+              date, val = row.split(",")
+              return date.strip(), val.strip()
+
+          date2, rate2 = parse(lines[-1])
+          date1, rate1 = parse(lines[-2])
+
+          if rate2 == "." or not rate2:
+              date2, rate2 = date1, rate1
+              date1, rate1 = parse(lines[-3])
+
+          rate_now = float(rate2)
+          rate_prev = float(rate1)
+          change = round(rate_now - rate_prev, 2)
+
+          rate_str = f"{rate_now:.2f}%"
+          sign = "+" if change >= 0 else ""
+          trend_str = f"{sign}{change:.2f}% vs last week"
+          trend_class = "trend-down" if change <= 0 else "trend-up"
+
+          with open("index.html", "r", encoding="utf-8") as f:
+              html = f.read()
+
+          # Update rate value
+          html = re.sub(
+              r'(<p class="snapshot-value" id="mortgageRateValue">)[^<]*(</p>)',
+              rf'\g<1>{rate_str}\g<2>',
+              html
+          )
+
+          # Update trend span (class + text)
+          html = re.sub(
+              r'(<span class="snapshot-trend )[^"]*(" id="mortgageRateTrend">)[^<]*(</span>)',
+              rf'\g<1>{trend_class}\g<2>{trend_str}\g<3>',
+              html
+          )
+
+          with open("index.html", "w", encoding="utf-8") as f:
+              f.write(html)
+
+          print(f"Updated: {rate_str} ({trend_str})")
+          EOF
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet || git commit -m "chore: update 30-yr mortgage rate"
+          git push
