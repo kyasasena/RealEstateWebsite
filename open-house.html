@@ -534,11 +534,10 @@ html, body {
 
   <!-- PROGRESS -->
   <div class="progress-wrap" id="progress-wrap">
-    <span class="progress-label" id="progress-label">Step 1 of 3</span>
+    <span class="progress-label" id="progress-label">Step 1 of 2</span>
     <div class="dots">
       <div class="dot active" id="dot-0"></div>
       <div class="dot" id="dot-1"></div>
-      <div class="dot" id="dot-2"></div>
     </div>
   </div>
 
@@ -578,7 +577,7 @@ html, body {
 
     <!-- SCREEN 1: Questions 1 & 2 -->
     <div class="screen" id="screen-1">
-      <div class="section-eyebrow">A couple quick questions</div>
+      <div class="section-eyebrow">Two quick questions</div>
 
       <div class="q-card">
         <div class="q-text">Are you currently working with a buyer's agent?</div>
@@ -609,34 +608,6 @@ html, body {
           </div>
           <div class="q-opt" onclick="pick(this,'q2')">
             <div class="q-radio"></div> Just exploring for now
-          </div>
-        </div>
-      </div>
-
-      <button class="btn-next" onclick="goTo(2)">
-        <span class="btn-label">Next</span>
-        <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </button>
-    </div>
-
-    <!-- SCREEN 2: Question 3 + Submit -->
-    <div class="screen" id="screen-2">
-      <div class="section-eyebrow">One more thing</div>
-
-      <div class="q-card">
-        <div class="q-text">Do you need to sell a home before buying?</div>
-        <div class="q-options" id="q3">
-          <div class="q-opt" onclick="pick(this,'q3')">
-            <div class="q-radio"></div> Yes, need to sell first
-          </div>
-          <div class="q-opt" onclick="pick(this,'q3')">
-            <div class="q-radio"></div> No, I'm a free buyer
-          </div>
-          <div class="q-opt" onclick="pick(this,'q3')">
-            <div class="q-radio"></div> I'm currently renting
-          </div>
-          <div class="q-opt" onclick="pick(this,'q3')">
-            <div class="q-radio"></div> Not sure yet
           </div>
         </div>
       </div>
@@ -692,7 +663,6 @@ html, body {
   <input type="hidden" name="phone" id="f-phone" />
   <input type="hidden" name="working_with_agent" id="f-q1" />
   <input type="hidden" name="move_timeframe" id="f-q2" />
-  <input type="hidden" name="needs_to_sell" id="f-q3" />
   <input type="hidden" name="_next" value="" />
 </form>
 
@@ -728,7 +698,7 @@ const CONFIG = {
   // 1. Go to formspree.io, sign up free, create a new form
   // 2. Set the destination email to your KW email
   // 3. Paste the form endpoint here (looks like https://formspree.io/f/xxxxxxxx)
-  formspreeEndpoint: "https://formspree.io/f/xgoqbwgg",
+  formspreeEndpoint: "https://formspree.io/f/YOUR_FORM_ID",
 
   /* --- RESOURCES ---
      Each resource shows as a card on the confirmation screen.
@@ -855,14 +825,14 @@ function goTo(step) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById('screen-' + step).classList.add('active');
 
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 2; i++) {
     const d = document.getElementById('dot-' + i);
     d.className = 'dot';
     if (i < step) d.classList.add('done');
     else if (i === step) d.classList.add('active');
   }
 
-  const labels = ['Step 1 of 3 — Your info', 'Step 2 of 3 — Quick questions', 'Step 3 of 3 — One more thing'];
+  const labels = ['Step 1 of 2 — Your info', 'Step 2 of 2 — Quick questions'];
   document.getElementById('progress-label').textContent = labels[step] || '';
 
   currentStep = step;
@@ -927,7 +897,6 @@ async function submitForm() {
   document.getElementById('f-phone').value   = document.getElementById('inp-phone').value.trim();
   document.getElementById('f-q1').value      = getSelected('q1');
   document.getElementById('f-q2').value      = getSelected('q2');
-  document.getElementById('f-q3').value      = getSelected('q3');
 
   const form   = document.getElementById('hidden-form');
   const data   = new FormData(form);
