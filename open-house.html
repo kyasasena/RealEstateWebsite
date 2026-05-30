@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<title>Open House Sign-In</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+/* ============================================================
+   OPEN HOUSE CONFIG — edit this before each open house
+   ============================================================ */
+/*
+  See the CONFIG block in the <script> section below.
+  Scroll past the styles to find:
+    const CONFIG = { ... }
+*/
+
+/* ============================================================
+   BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:      #0f0f0f;
+  --ink-mid:  #555;
+  --ink-soft: #888;
+  --line:     #e4e0db;
+  --bg:       #faf9f7;
+  --white:    #ffffff;
+  --brand:    #1a1a2e;
+  --brand-lt: #2d2d4a;
+  --green:    #1D9E75;
+  --green-lt: #eaf6f1;
+  --radius:   12px;
+  --radius-sm: 8px;
+}
+
+html, body {
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+.page {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================================
+   HERO HEADER
+   ============================================================ */
+.hero {
+  background: var(--brand);
+  padding: 36px 24px 28px;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 220px; height: 220px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -40px; left: -40px;
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.03);
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 10px;
+}
+
+.hero-tag::before {
+  content: '';
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+}
+
+.hero-address {
+  font-family: 'DM Serif Display', serif;
+  font-size: 26px;
+  line-height: 1.2;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.hero-city {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 20px;
+}
+
+.hero-agent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.agent-avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.agent-avatar img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.agent-info .name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.agent-info .brokerage {
+  font-size: 12px;
+  color: rgba(255,255,255,0.55);
+}
+
+/* ============================================================
+   PROGRESS DOTS
+   ============================================================ */
+.progress-wrap {
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress-label {
+  font-size: 12px;
+  color: var(--ink-soft);
+  flex: 1;
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--line);
+  transition: all 0.25s ease;
+}
+.dot.active { background: var(--brand); transform: scale(1.2); }
+.dot.done   { background: var(--green); }
+
+/* ============================================================
+   FORM BODY
+   ============================================================ */
+.form-body {
+  flex: 1;
+  background: var(--white);
+  padding: 28px 24px 36px;
+}
+
+.screen { display: none; }
+.screen.active { display: block; }
+
+.section-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 18px;
+}
+
+/* Fields */
+.field {
+  margin-bottom: 16px;
+}
+
+.field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-mid);
+  margin-bottom: 6px;
+}
+
+.field input {
+  width: 100%;
+  height: 48px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0 14px;
+  font-size: 16px;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: var(--brand);
+  background: var(--white);
+}
+
+.field input.error {
+  border-color: #d94f4f;
+}
+
+.field-error {
+  font-size: 12px;
+  color: #d94f4f;
+  margin-top: 4px;
+  display: none;
+}
+.field-error.visible { display: block; }
+
+/* Question cards */
+.q-card {
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px 16px 14px;
+  margin-bottom: 14px;
+  background: var(--bg);
+}
+
+.q-card .q-text {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.q-options {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.q-opt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--ink);
+  background: var(--white);
+  transition: border-color 0.15s, background 0.15s;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.q-opt:active { transform: scale(0.99); }
+
+.q-opt.selected {
+  background: var(--green-lt);
+  border-color: var(--green);
+  color: #085041;
+  font-weight: 500;
+}
+
+.q-radio {
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.q-opt.selected .q-radio {
+  background: var(--green);
+  border-color: var(--green);
+}
+
+.q-opt.selected .q-radio::after {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+/* CTA button */
+.btn-next {
+  width: 100%;
+  height: 52px;
+  background: var(--brand);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  margin-top: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.2s, transform 0.1s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-next:active { transform: scale(0.99); background: var(--brand-lt); }
+
+.btn-next svg {
+  width: 18px; height: 18px;
+  transition: transform 0.2s;
+}
+
+.btn-next:hover svg { transform: translateX(3px); }
+
+.fine-print {
+  font-size: 12px;
+  color: var(--ink-soft);
+  text-align: center;
+  margin-top: 14px;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   RESOURCES SECTION (shown on confirmation)
+   ============================================================ */
+.resources-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 24px;
+}
+
+.resource-card {
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px 12px;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.resource-card:hover { border-color: var(--brand); background: var(--white); }
+
+.resource-icon {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  background: var(--brand);
+  display: flex; align-items: center; justify-content: center;
+}
+
+.resource-icon svg {
+  width: 18px; height: 18px;
+  stroke: #fff; fill: none;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.resource-card .r-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.resource-card .r-sub {
+  font-size: 11px;
+  color: var(--ink-soft);
+}
+
+.resource-card.coming-soon {
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ============================================================
+   SUCCESS SCREEN
+   ============================================================ */
+.success-wrap {
+  text-align: center;
+  padding: 8px 0 0;
+}
+
+.check-ring {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: var(--green-lt);
+  border: 2px solid var(--green);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.check-ring svg {
+  width: 32px; height: 32px;
+  stroke: var(--green);
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.success-wrap h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 26px;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.success-wrap p {
+  font-size: 15px;
+  color: var(--ink-mid);
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+.resources-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 28px 0 0;
+  text-align: left;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.page-footer {
+  background: var(--white);
+  border-top: 1px solid var(--line);
+  padding: 16px 24px;
+  text-align: center;
+}
+
+.page-footer a {
+  font-size: 13px;
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.page-footer a:hover { color: var(--ink); }
+
+/* ============================================================
+   LOADING STATE
+   ============================================================ */
+.btn-next.loading {
+  background: var(--ink-soft);
+  pointer-events: none;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+.spinner {
+  width: 18px; height: 18px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: none;
+}
+.btn-next.loading .spinner { display: block; }
+.btn-next.loading .btn-label { display: none; }
+
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero" id="hero">
+    <div class="hero-tag">Open House</div>
+    <div class="hero-address" id="hero-address">Loading…</div>
+    <div class="hero-city" id="hero-city"></div>
+    <div class="hero-agent">
+      <div class="agent-avatar" id="agent-avatar">KS</div>
+      <div class="agent-info">
+        <div class="name" id="agent-name">Kya Sasena</div>
+        <div class="brokerage" id="agent-brokerage">KW Buckhead · Atlanta, GA</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-wrap" id="progress-wrap">
+    <span class="progress-label" id="progress-label">Step 1 of 3</span>
+    <div class="dots">
+      <div class="dot active" id="dot-0"></div>
+      <div class="dot" id="dot-1"></div>
+      <div class="dot" id="dot-2"></div>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <div class="form-body">
+
+    <!-- SCREEN 0: Contact Info -->
+    <div class="screen active" id="screen-0">
+      <div class="section-eyebrow">Your info</div>
+
+      <div class="field">
+        <label for="inp-name">Full name</label>
+        <input type="text" id="inp-name" placeholder="Jane Smith" autocomplete="name" />
+        <div class="field-error" id="err-name">Please enter your name</div>
+      </div>
+
+      <div class="field">
+        <label for="inp-phone">Phone number</label>
+        <input type="tel" id="inp-phone" placeholder="(404) 555-0123" autocomplete="tel" />
+        <div class="field-error" id="err-phone">Please enter your phone number</div>
+      </div>
+
+      <div class="field">
+        <label for="inp-email">Email address</label>
+        <input type="email" id="inp-email" placeholder="jane@email.com" autocomplete="email" />
+        <div class="field-error" id="err-email">Please enter a valid email</div>
+      </div>
+
+      <button class="btn-next" onclick="validateStep0()">
+        <span class="btn-label">Next</span>
+        <div class="spinner"></div>
+        <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+
+      <p class="fine-print">Your info will only be used to send property resources and follow up about this home.</p>
+    </div>
+
+    <!-- SCREEN 1: Questions 1 & 2 -->
+    <div class="screen" id="screen-1">
+      <div class="section-eyebrow">A couple quick questions</div>
+
+      <div class="q-card">
+        <div class="q-text">Are you currently working with a buyer's agent?</div>
+        <div class="q-options" id="q1">
+          <div class="q-opt" onclick="pick(this,'q1')">
+            <div class="q-radio"></div> Yes, I have an agent
+          </div>
+          <div class="q-opt" onclick="pick(this,'q1')">
+            <div class="q-radio"></div> No, I'm unrepresented
+          </div>
+          <div class="q-opt" onclick="pick(this,'q1')">
+            <div class="q-radio"></div> Just looking around
+          </div>
+        </div>
+      </div>
+
+      <div class="q-card">
+        <div class="q-text">What's your timeframe to move?</div>
+        <div class="q-options" id="q2">
+          <div class="q-opt" onclick="pick(this,'q2')">
+            <div class="q-radio"></div> ASAP / within 3 months
+          </div>
+          <div class="q-opt" onclick="pick(this,'q2')">
+            <div class="q-radio"></div> 3–6 months
+          </div>
+          <div class="q-opt" onclick="pick(this,'q2')">
+            <div class="q-radio"></div> 6–12 months
+          </div>
+          <div class="q-opt" onclick="pick(this,'q2')">
+            <div class="q-radio"></div> Just exploring for now
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-next" onclick="goTo(2)">
+        <span class="btn-label">Next</span>
+        <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+    </div>
+
+    <!-- SCREEN 2: Question 3 + Submit -->
+    <div class="screen" id="screen-2">
+      <div class="section-eyebrow">One more thing</div>
+
+      <div class="q-card">
+        <div class="q-text">Do you need to sell a home before buying?</div>
+        <div class="q-options" id="q3">
+          <div class="q-opt" onclick="pick(this,'q3')">
+            <div class="q-radio"></div> Yes, need to sell first
+          </div>
+          <div class="q-opt" onclick="pick(this,'q3')">
+            <div class="q-radio"></div> No, I'm a free buyer
+          </div>
+          <div class="q-opt" onclick="pick(this,'q3')">
+            <div class="q-radio"></div> I'm currently renting
+          </div>
+          <div class="q-opt" onclick="pick(this,'q3')">
+            <div class="q-radio"></div> Not sure yet
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-next" id="submit-btn" onclick="submitForm()">
+        <span class="btn-label">Sign in &amp; get resources</span>
+        <div class="spinner"></div>
+        <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+
+      <p class="fine-print">
+        By signing in you acknowledge receipt of any available property disclosures
+        and consent to be contacted by the listing agent.
+      </p>
+    </div>
+
+    <!-- SCREEN 3: Confirmation + Resources -->
+    <div class="screen" id="screen-done">
+      <div class="success-wrap">
+
+        <div class="check-ring">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+
+        <h2>You're signed in!</h2>
+        <p>Welcome and enjoy the tour. Resources and disclosures will be sent to your email.</p>
+
+        <div class="resources-eyebrow">Resources for this home</div>
+
+        <div class="resources-grid" id="resources-grid">
+          <!-- Populated by JS from CONFIG -->
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /form-body -->
+
+  <!-- FOOTER -->
+  <div class="page-footer">
+    <a id="footer-link" href="#">kyasasena.github.io</a>
+  </div>
+
+</div><!-- /page -->
+
+
+<!-- HIDDEN FORMSPREE FORM (actual submission target) -->
+<form id="hidden-form" action="" method="POST" style="display:none">
+  <input type="hidden" name="_subject" id="f-subject" value="Open House Sign-In" />
+  <input type="hidden" name="address" id="f-address" />
+  <input type="hidden" name="name" id="f-name" />
+  <input type="hidden" name="email" id="f-email" />
+  <input type="hidden" name="phone" id="f-phone" />
+  <input type="hidden" name="working_with_agent" id="f-q1" />
+  <input type="hidden" name="move_timeframe" id="f-q2" />
+  <input type="hidden" name="needs_to_sell" id="f-q3" />
+  <input type="hidden" name="_next" value="" />
+</form>
+
+
+<script>
+/* ============================================================
+   ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗
+  ██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔════╝
+  ██║     ██║   ██║██╔██╗ ██║█████╗  ██║██║  ███╗
+  ██║     ██║   ██║██║╚██╗██║██╔══╝  ██║██║   ██║
+  ╚██████╗╚██████╔╝██║ ╚████║██║     ██║╚██████╔╝
+   ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝
+
+  EDIT THIS BLOCK BEFORE EACH OPEN HOUSE
+  ============================================================ */
+
+const CONFIG = {
+
+  /* --- PROPERTY INFO --- */
+  address:    "247 Peachtree Rd NE",          // Street address
+  cityState:  "Atlanta, GA 30305",             // City, state, zip
+  price:      "$749,000",                      // List price (shown in email subject)
+
+  /* --- AGENT INFO --- */
+  agentName:   "Kya Sasena",
+  agentTitle:  "REALTOR®",
+  brokerage:   "KW Buckhead · Atlanta, GA",
+  agentPhone:  "404-000-0000",                 // Your KW phone number
+  agentPhoto:  "",                             // Optional: URL to your headshot. Leave "" for initials.
+  websiteURL:  "https://kyasasena.github.io/RealEstateWebsite",
+
+  /* --- FORMSPREE --- */
+  // 1. Go to formspree.io, sign up free, create a new form
+  // 2. Set the destination email to your KW email
+  // 3. Paste the form endpoint here (looks like https://formspree.io/f/xxxxxxxx)
+  formspreeEndpoint: "https://formspree.io/f/xgoqbwgg",
+
+  /* --- RESOURCES ---
+     Each resource shows as a card on the confirmation screen.
+     Set url: "" and available: false for resources you don't have yet —
+     they'll show as "Coming soon" cards so guests know to expect them.
+
+     Icons (pick one): "home" | "doc" | "search" | "chart" | "dollar" | "key" | "phone"
+  ------------------------------------------------------------ */
+  resources: [
+    {
+      title:     "Property Details",
+      subtitle:  "Photos, features & specs",
+      icon:      "home",
+      url:       "",           // Paste MLS link or your site page
+      available: false
+    },
+    {
+      title:     "Disclosures",
+      subtitle:  "Seller's disclosure docs",
+      icon:      "doc",
+      url:       "",           // Paste Google Drive link or PDF URL
+      available: false
+    },
+    {
+      title:     "Similar Homes",
+      subtitle:  "Comparable active listings",
+      icon:      "search",
+      url:       "",           // Paste saved search or MLS link
+      available: false
+    },
+    {
+      title:     "Market Stats",
+      subtitle:  "Neighborhood data",
+      icon:      "chart",
+      url:       "",
+      available: false
+    },
+    {
+      title:     "Lending Info",
+      subtitle:  "Rates & pre-approval",
+      icon:      "dollar",
+      url:       "",
+      available: false
+    },
+    {
+      title:     "Contact Kya",
+      subtitle:  "Questions? Let's talk",
+      icon:      "phone",
+      url:       "",           // Auto-filled with tel: link from agentPhone
+      available: true
+    }
+  ]
+
+};
+
+/* ============================================================
+   END OF CONFIG — do not edit below unless you're customizing
+   ============================================================ */
+
+// --- ICONS ---
+const ICONS = {
+  home:   `<svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1z"/><path d="M9 21V12h6v9"/></svg>`,
+  doc:    `<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>`,
+  search: `<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>`,
+  chart:  `<svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>`,
+  dollar: `<svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>`,
+  key:    `<svg viewBox="0 0 24 24"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>`,
+  phone:  `<svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .92h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>`
+};
+
+// --- INIT PAGE ---
+document.addEventListener('DOMContentLoaded', () => {
+
+  document.getElementById('hero-address').textContent  = CONFIG.address;
+  document.getElementById('hero-city').textContent     = CONFIG.cityState;
+  document.getElementById('agent-name').textContent    = CONFIG.agentName;
+  document.getElementById('agent-brokerage').textContent = CONFIG.brokerage;
+  document.getElementById('footer-link').href          = CONFIG.websiteURL;
+  document.getElementById('footer-link').textContent   = CONFIG.websiteURL.replace('https://','');
+
+  // Agent avatar
+  const av = document.getElementById('agent-avatar');
+  if (CONFIG.agentPhoto) {
+    av.innerHTML = `<img src="${CONFIG.agentPhoto}" alt="${CONFIG.agentName}" />`;
+  } else {
+    const initials = CONFIG.agentName.split(' ').map(w=>w[0]).join('').substring(0,2).toUpperCase();
+    av.textContent = initials;
+  }
+
+  // Formspree
+  document.getElementById('hidden-form').action = CONFIG.formspreeEndpoint;
+
+  // Contact resource — auto-fill phone
+  CONFIG.resources.forEach(r => {
+    if (r.icon === 'phone' && !r.url) r.url = `tel:${CONFIG.agentPhone.replace(/\D/g,'')}`;
+  });
+
+  // Build resource cards
+  buildResourceCards();
+});
+
+function buildResourceCards() {
+  const grid = document.getElementById('resources-grid');
+  grid.innerHTML = '';
+  CONFIG.resources.forEach(r => {
+    const a = document.createElement('a');
+    a.className = 'resource-card' + (r.available ? '' : ' coming-soon');
+    a.href = r.available && r.url ? r.url : '#';
+    if (r.url && r.url.startsWith('http')) a.target = '_blank';
+
+    a.innerHTML = `
+      <div class="resource-icon">${ICONS[r.icon] || ICONS.doc}</div>
+      <div class="r-title">${r.title}</div>
+      <div class="r-sub">${r.available ? r.subtitle : 'Coming soon'}</div>
+    `;
+    grid.appendChild(a);
+  });
+}
+
+// --- NAVIGATION ---
+let currentStep = 0;
+
+function goTo(step) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('screen-' + step).classList.add('active');
+
+  for (let i = 0; i < 3; i++) {
+    const d = document.getElementById('dot-' + i);
+    d.className = 'dot';
+    if (i < step) d.classList.add('done');
+    else if (i === step) d.classList.add('active');
+  }
+
+  const labels = ['Step 1 of 3 — Your info', 'Step 2 of 3 — Quick questions', 'Step 3 of 3 — One more thing'];
+  document.getElementById('progress-label').textContent = labels[step] || '';
+
+  currentStep = step;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// --- SELECTION ---
+function pick(el, groupId) {
+  document.querySelectorAll('#' + groupId + ' .q-opt').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function getSelected(groupId) {
+  const sel = document.querySelector('#' + groupId + ' .q-opt.selected');
+  return sel ? sel.textContent.trim() : 'No answer';
+}
+
+// --- VALIDATION ---
+function validateStep0() {
+  let valid = true;
+
+  const name  = document.getElementById('inp-name');
+  const phone = document.getElementById('inp-phone');
+  const email = document.getElementById('inp-email');
+
+  const showErr = (id, show) => {
+    document.getElementById(id).classList.toggle('visible', show);
+  };
+
+  if (!name.value.trim()) {
+    name.classList.add('error'); showErr('err-name', true); valid = false;
+  } else {
+    name.classList.remove('error'); showErr('err-name', false);
+  }
+
+  if (!phone.value.trim()) {
+    phone.classList.add('error'); showErr('err-phone', true); valid = false;
+  } else {
+    phone.classList.remove('error'); showErr('err-phone', false);
+  }
+
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+  if (!emailOk) {
+    email.classList.add('error'); showErr('err-email', true); valid = false;
+  } else {
+    email.classList.remove('error'); showErr('err-email', false);
+  }
+
+  if (valid) goTo(1);
+}
+
+// --- SUBMIT ---
+async function submitForm() {
+  const btn = document.getElementById('submit-btn');
+  btn.classList.add('loading');
+
+  // Populate hidden form fields
+  document.getElementById('f-subject').value = `Open House Sign-In — ${CONFIG.address}`;
+  document.getElementById('f-address').value = `${CONFIG.address}, ${CONFIG.cityState}`;
+  document.getElementById('f-name').value    = document.getElementById('inp-name').value.trim();
+  document.getElementById('f-email').value   = document.getElementById('inp-email').value.trim();
+  document.getElementById('f-phone').value   = document.getElementById('inp-phone').value.trim();
+  document.getElementById('f-q1').value      = getSelected('q1');
+  document.getElementById('f-q2').value      = getSelected('q2');
+  document.getElementById('f-q3').value      = getSelected('q3');
+
+  const form   = document.getElementById('hidden-form');
+  const data   = new FormData(form);
+
+  try {
+    const res = await fetch(CONFIG.formspreeEndpoint, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (res.ok) {
+      showSuccess();
+    } else {
+      // Still show success — don't block guest experience
+      console.warn('Formspree error:', res.status);
+      showSuccess();
+    }
+  } catch (err) {
+    // Network offline — still show success to guest
+    console.warn('Submission error:', err);
+    showSuccess();
+  }
+}
+
+function showSuccess() {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('screen-done').classList.add('active');
+  document.getElementById('progress-wrap').style.display = 'none';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
