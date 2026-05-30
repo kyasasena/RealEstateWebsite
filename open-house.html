@@ -88,63 +88,49 @@ html, body {
   background: rgba(255,255,255,0.03);
 }
 
-.hero-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
-  margin-bottom: 10px;
-}
-
-.hero-tag::before {
-  content: '';
-  display: inline-block;
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--green);
-}
-
-.hero-address {
+.hero-welcome {
   font-family: 'DM Serif Display', serif;
-  font-size: 26px;
-  line-height: 1.2;
+  font-size: 38px;
+  line-height: 1.15;
   color: var(--white);
-  margin-bottom: 6px;
+  margin-bottom: 20px;
 }
 
-.hero-city {
-  font-size: 14px;
-  color: rgba(255,255,255,0.6);
-  margin-bottom: 20px;
+.hero-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.65);
+  display: block;
+  margin-top: 4px;
+  letter-spacing: 0.01em;
 }
 
 .hero-agent {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   padding-top: 16px;
   border-top: 1px solid rgba(255,255,255,0.12);
 }
 
 .agent-avatar {
-  width: 36px; height: 36px;
+  width: 52px; height: 52px;
   border-radius: 50%;
   background: rgba(255,255,255,0.15);
   display: flex; align-items: center; justify-content: center;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--white);
   flex-shrink: 0;
   overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.3);
 }
 
 .agent-avatar img {
   width: 100%; height: 100%;
   object-fit: cover;
+  object-position: center 8%;
   border-radius: 50%;
 }
 
@@ -478,19 +464,28 @@ html, body {
    FOOTER
    ============================================================ */
 .page-footer {
-  background: var(--white);
+  background: #111;
   border-top: 1px solid var(--line);
-  padding: 16px 24px;
-  text-align: center;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
 }
 
 .page-footer a {
   font-size: 13px;
-  color: var(--ink-soft);
+  color: rgba(255,255,255,0.5);
   text-decoration: none;
 }
 
-.page-footer a:hover { color: var(--ink); }
+.page-footer a:hover { color: #fff; }
 
 /* ============================================================
    LOADING STATE
@@ -520,9 +515,7 @@ html, body {
 
   <!-- HERO -->
   <div class="hero" id="hero">
-    <div class="hero-tag">Open House</div>
-    <div class="hero-address" id="hero-address">Loading…</div>
-    <div class="hero-city" id="hero-city"></div>
+    <div class="hero-welcome">Open House<br><span class="hero-sub">Sign In &amp; Resources</span></div>
     <div class="hero-agent">
       <div class="agent-avatar" id="agent-avatar">KS</div>
       <div class="agent-info">
@@ -534,11 +527,10 @@ html, body {
 
   <!-- PROGRESS -->
   <div class="progress-wrap" id="progress-wrap">
-    <span class="progress-label" id="progress-label">Step 1 of 3</span>
+    <span class="progress-label" id="progress-label">Step 1 of 2</span>
     <div class="dots">
       <div class="dot active" id="dot-0"></div>
       <div class="dot" id="dot-1"></div>
-      <div class="dot" id="dot-2"></div>
     </div>
   </div>
 
@@ -578,7 +570,7 @@ html, body {
 
     <!-- SCREEN 1: Questions 1 & 2 -->
     <div class="screen" id="screen-1">
-      <div class="section-eyebrow">A couple quick questions</div>
+      <div class="section-eyebrow">Two quick questions</div>
 
       <div class="q-card">
         <div class="q-text">Are you currently working with a buyer's agent?</div>
@@ -609,34 +601,6 @@ html, body {
           </div>
           <div class="q-opt" onclick="pick(this,'q2')">
             <div class="q-radio"></div> Just exploring for now
-          </div>
-        </div>
-      </div>
-
-      <button class="btn-next" onclick="goTo(2)">
-        <span class="btn-label">Next</span>
-        <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </button>
-    </div>
-
-    <!-- SCREEN 2: Question 3 + Submit -->
-    <div class="screen" id="screen-2">
-      <div class="section-eyebrow">One more thing</div>
-
-      <div class="q-card">
-        <div class="q-text">Do you need to sell a home before buying?</div>
-        <div class="q-options" id="q3">
-          <div class="q-opt" onclick="pick(this,'q3')">
-            <div class="q-radio"></div> Yes, need to sell first
-          </div>
-          <div class="q-opt" onclick="pick(this,'q3')">
-            <div class="q-radio"></div> No, I'm a free buyer
-          </div>
-          <div class="q-opt" onclick="pick(this,'q3')">
-            <div class="q-radio"></div> I'm currently renting
-          </div>
-          <div class="q-opt" onclick="pick(this,'q3')">
-            <div class="q-radio"></div> Not sure yet
           </div>
         </div>
       </div>
@@ -677,7 +641,8 @@ html, body {
 
   <!-- FOOTER -->
   <div class="page-footer">
-    <a id="footer-link" href="#">kyasasena.github.io</a>
+    <img src="assets/kw-logo-buckhead.png" alt="KW Buckhead" class="footer-logo" />
+    <a href="https://www.kyasasena.com" target="_blank">www.kyasasena.com</a>
   </div>
 
 </div><!-- /page -->
@@ -692,7 +657,6 @@ html, body {
   <input type="hidden" name="phone" id="f-phone" />
   <input type="hidden" name="working_with_agent" id="f-q1" />
   <input type="hidden" name="move_timeframe" id="f-q2" />
-  <input type="hidden" name="needs_to_sell" id="f-q3" />
   <input type="hidden" name="_next" value="" />
 </form>
 
@@ -721,14 +685,14 @@ const CONFIG = {
   agentTitle:  "REALTOR®",
   brokerage:   "KW Buckhead · Atlanta, GA",
   agentPhone:  "404-000-0000",                 // Your KW phone number
-  agentPhoto:  "",                             // Optional: URL to your headshot. Leave "" for initials.
+  agentPhoto:  "assets/kya-headshot.jpg",          // Your headshot — upload this file to your repo
   websiteURL:  "https://kyasasena.github.io/RealEstateWebsite",
 
   /* --- FORMSPREE --- */
   // 1. Go to formspree.io, sign up free, create a new form
   // 2. Set the destination email to your KW email
   // 3. Paste the form endpoint here (looks like https://formspree.io/f/xxxxxxxx)
-  formspreeEndpoint: "https://formspree.io/f/xgoqbwgg",
+  formspreeEndpoint: "https://formspree.io/f/YOUR_FORM_ID",
 
   /* --- RESOURCES ---
      Each resource shows as a card on the confirmation screen.
@@ -802,8 +766,6 @@ const ICONS = {
 // --- INIT PAGE ---
 document.addEventListener('DOMContentLoaded', () => {
 
-  document.getElementById('hero-address').textContent  = CONFIG.address;
-  document.getElementById('hero-city').textContent     = CONFIG.cityState;
   document.getElementById('agent-name').textContent    = CONFIG.agentName;
   document.getElementById('agent-brokerage').textContent = CONFIG.brokerage;
   document.getElementById('footer-link').href          = CONFIG.websiteURL;
@@ -855,14 +817,14 @@ function goTo(step) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById('screen-' + step).classList.add('active');
 
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 2; i++) {
     const d = document.getElementById('dot-' + i);
     d.className = 'dot';
     if (i < step) d.classList.add('done');
     else if (i === step) d.classList.add('active');
   }
 
-  const labels = ['Step 1 of 3 — Your info', 'Step 2 of 3 — Quick questions', 'Step 3 of 3 — One more thing'];
+  const labels = ['Step 1 of 2 — Your info', 'Step 2 of 2 — Quick questions'];
   document.getElementById('progress-label').textContent = labels[step] || '';
 
   currentStep = step;
@@ -927,7 +889,6 @@ async function submitForm() {
   document.getElementById('f-phone').value   = document.getElementById('inp-phone').value.trim();
   document.getElementById('f-q1').value      = getSelected('q1');
   document.getElementById('f-q2').value      = getSelected('q2');
-  document.getElementById('f-q3').value      = getSelected('q3');
 
   const form   = document.getElementById('hidden-form');
   const data   = new FormData(form);
@@ -963,4 +924,3 @@ function showSuccess() {
 
 </body>
 </html>
-
