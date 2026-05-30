@@ -681,7 +681,6 @@ html, body {
 <!-- HIDDEN FORMSPREE FORM (actual submission target) -->
 <form id="hidden-form" action="" method="POST" style="display:none">
   <input type="hidden" name="_subject" id="f-subject" value="Open House Sign-In" />
-  <input type="hidden" name="address" id="f-address" />
   <input type="hidden" name="name" id="f-name" />
   <input type="hidden" name="email" id="f-email" />
   <input type="hidden" name="phone" id="f-phone" />
@@ -722,7 +721,7 @@ const CONFIG = {
   // 1. Go to formspree.io, sign up free, create a new form
   // 2. Set the destination email to your KW email
   // 3. Paste the form endpoint here (looks like https://formspree.io/f/xxxxxxxx)
-  formspreeEndpoint: "https://formspree.io/f/xgoqbwgg",
+  formspreeEndpoint: "https://formspree.io/f/YOUR_FORM_ID",
 
   /* --- RESOURCES ---
      Each resource shows as a card on the confirmation screen.
@@ -883,7 +882,6 @@ async function submitForm() {
 
   // Populate hidden form fields
   document.getElementById('f-subject').value = `Open House Sign-In — ${CONFIG.address}`;
-  document.getElementById('f-address').value = `${CONFIG.address}, ${CONFIG.cityState}`;
   document.getElementById('f-name').value    = document.getElementById('inp-name').value.trim();
   document.getElementById('f-email').value   = document.getElementById('inp-email').value.trim();
   document.getElementById('f-phone').value   = document.getElementById('inp-phone').value.trim();
