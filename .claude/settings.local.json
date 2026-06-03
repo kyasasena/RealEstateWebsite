@@ -35,7 +35,10 @@
       "Bash(python *)",
       "Bash(Remove-Item *)",
       "PowerShell(python -c \"import PyPDF2; print\\('PyPDF2 found'\\)\" 2>$null; python -c \"import fitz; print\\('PyMuPDF found'\\)\" 2>$null; python --version 2>$null)",
-      "PowerShell(python -m pip install pypdf --quiet)"
+      "PowerShell(python -m pip install pypdf --quiet)",
+      "PowerShell(python --version; python -c \"from PIL import Image; print\\('Pillow OK'\\)\" 2>$null)",
+      "PowerShell(python -c \"import reportlab; print\\('reportlab OK'\\)\" 2>$null; python -c \"import fpdf; print\\('fpdf OK'\\)\" 2>$null; python -c \"import img2pdf; print\\('img2pdf OK'\\)\" 2>$null)",
+      "PowerShell(pip install *)"
     ]
   }
 }
