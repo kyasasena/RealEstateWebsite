@@ -391,7 +391,7 @@ document.querySelectorAll('.diff-card, .spec-card, .step, .svc-item, .nl-card, .
    Then paste it below to enable live updates.
    ============================================= */
 (function () {
-  var FRED_API_KEY = ''; // ← paste your free FRED API key here to enable live updates
+  var FRED_API_KEY = 'e3054c72161cdb29195b2871503d4768';
 
   var rateEl  = document.getElementById('mortgageRateValue');
   var trendEl = document.getElementById('mortgageRateTrend');
