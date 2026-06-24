@@ -39,7 +39,10 @@
       "PowerShell(python --version; python -c \"from PIL import Image; print\\('Pillow OK'\\)\" 2>$null)",
       "PowerShell(python -c \"import reportlab; print\\('reportlab OK'\\)\" 2>$null; python -c \"import fpdf; print\\('fpdf OK'\\)\" 2>$null; python -c \"import img2pdf; print\\('img2pdf OK'\\)\" 2>$null)",
       "PowerShell(pip install *)",
-      "PowerShell(pip show *)"
+      "PowerShell(pip show *)",
+      "Bash(git pull *)",
+      "Bash(git push *)",
+      "Bash(git stash *)"
     ]
   }
 }
