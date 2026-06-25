@@ -42,7 +42,13 @@
       "PowerShell(pip show *)",
       "Bash(git pull *)",
       "Bash(git push *)",
-      "Bash(git stash *)"
+      "Bash(git stash *)",
+      "Bash(pip show *)",
+      "Bash(git restore *)",
+      "Bash(cp newsletter-july-2026-fixed.pdf newsletter-july-2026.pdf)",
+      "Bash(rm newsletter-july-2026-fixed.pdf)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
     ]
   }
 }
