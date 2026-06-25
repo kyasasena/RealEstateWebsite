@@ -48,7 +48,11 @@
       "Bash(cp newsletter-july-2026-fixed.pdf newsletter-july-2026.pdf)",
       "Bash(rm newsletter-july-2026-fixed.pdf)",
       "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(where pdfinfo *)",
+      "Bash(where qpdf *)",
+      "Bash(cp assets/newsletter-july-2026-fixed2.pdf assets/newsletter-july-2026.pdf)",
+      "Bash(rm assets/newsletter-july-2026-fixed.pdf assets/newsletter-july-2026-fixed2.pdf)"
     ]
   }
 }
